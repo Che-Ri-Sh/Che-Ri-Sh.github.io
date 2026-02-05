@@ -1,0 +1,25 @@
+baseURL: "https://Che-Ri-Sh.github.io/"
+title: "CHERISH"
+languageCode: "en-us"
+theme: ["PaperMod"]
+
+params:
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  math: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 10
+    - name: About
+      url: /about/
+      weight: 20
