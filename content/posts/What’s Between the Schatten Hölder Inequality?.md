@@ -13,7 +13,7 @@ CHERISH, 2026.2.6
 \[TL;DR\] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 
 $$
-\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{\|A^*B\|_{S_1}}_{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}. \tag{Chain}
+\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{\|A^*B\|_{S_1}}_{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
 $$
 
 ---
@@ -48,20 +48,15 @@ Here I want to clarify that the above three are "perspectives" instead of "categ
 > [!Definition 1.1]
 > **Definition (Schatten $p$-norm).**  
 > Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of \(A\), where $q=\min\{m,n\}$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined by  
->
 > $$
-> \|A\|_{S_p}:=
-> \begin{cases}
-> \Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, & 1\le p<\infty,\\[4pt]
-> \sigma_1(A), & p=\infty.
-> \end{cases}
+> \|A\|_{S_p}:= \begin{cases} \Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, & 1\le p<\infty,\\ \sigma_1(A), & p=\infty.\end{cases}
 > $$
 
 There are several useful special cases of Schatten norms:
 - $p=1$: **nuclear / trace / Ky Fan norm**
 
   $$
-  \|A\|_{S_1}=\|A\|_*=\sum_{i=1}^q \sigma_i(A).
+  \|A\|_{S_1}=\|A\|_{*}=\sum_{i=1}^q \sigma_i(A).
   $$
   
 - $p=2$: **Frobenius norm**
@@ -73,7 +68,7 @@ There are several useful special cases of Schatten norms:
 - $p=\infty$: **spectral norm**
 
   $$
-  \|A\|_{S_\infty}=\|A\|_2=\sigma_1(A).
+  \|A\|_{S_\infty} = \|A\|_2 = \sigma_1 (A).
   $$
 ---
 ### The Schatten Hölder inequality
