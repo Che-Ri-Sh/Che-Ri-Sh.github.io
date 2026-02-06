@@ -189,11 +189,7 @@ As you can see, the von Neumann trace inequality and the Schatten Hölder inequa
 Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have
 
 $$
-\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
-\le
-\|\sigma(A)\|_p\,\|\sigma(B)\|_q
-=
-\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
+\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B) \le \|\sigma(A)\|_p\,\|\sigma(B)\|_q = \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
 $$
 
 In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since
