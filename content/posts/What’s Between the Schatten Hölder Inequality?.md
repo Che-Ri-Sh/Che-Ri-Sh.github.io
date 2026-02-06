@@ -35,21 +35,14 @@ $|\mathrm{tr}(A^*B)|$, for matrices $A,B\in\mathbb{C}^{m\times n}$. To my knowle
 
 What are their connections? How to use them properly? We set out to answer these questions in this post.
 
-{{< figure
-    src="/images/von_Neumann.jpg"
-    caption="Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024."
-    style="max-width:60%; margin: 0 auto; text-align: center;"
->}}
-
 <figure style="text-align:center;">
-  <img src="/images/von_Neumann.jpg"
+  <img src="/images/von-neumann-plaque.jpg"
        alt="von Neumann memorial plaque"
        style="max-width:60%; height:auto; display:block; margin:0 auto;">
-  <figcaption>
+  <figcaption style="font-weight: normal;">
     Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024.
   </figcaption>
 </figure>
-
 
 ---
 
