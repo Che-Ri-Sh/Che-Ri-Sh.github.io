@@ -50,15 +50,16 @@ Defining a meaning norm for a matrix is not that trivial (at least not as trivia
 Here I want to clarify that the above three are "perspectives" instead of "categories". They can overlap (for instance, the spectral norm is both an operator norm and a Schatten norm), and they certainly do not exhaust all matrix norms of interest. Still, the motivations behind these perspectives are, in my opinion, genuinely distinct; and keeping them separate helps explain why different norms arise naturally in different settings. In this article, we mainly focus on Schatten norms (we may discuss others in future posts, though).
 
 > **Definition 1.1 (Schatten $p$-norm).**  
-> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined as follows:  
-> When $1\le p<\infty$:
+> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\lVert \cdot\rVet_{S_p}$) is defined as follows: When $1\le p<\infty$:
+>
 > $$
 > \lVert A\rVert_{S_p}:=\left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p},
 > $$
 >
 > when $p=\infty$:
+>
 > $$
-> \lVert A\rVert_{S_\infty}:=\sigma_1(A).
+> \lVert A\rVert_{S_\infty} =\sigma_1(A).
 > $$
   
 There are several useful special cases of Schatten norms:
@@ -72,7 +73,7 @@ There are several useful special cases of Schatten norms:
 - $p=2$: **Frobenius norm**
 
   $$
-  \lVert A\rVert_{S_2}=\lVert A\rVert_F=\sqrt{\mathrm{tr}\!\left(A^{\ast}A\right)}.
+  \lVert A\rVert_{S_2}=\lVert A\rVert_F=\sqrt{\mathrm{tr} \left(A^{\ast}A\right)}.
   $$
 
 - $p=\infty$: **spectral norm**
@@ -95,7 +96,7 @@ Fortunately, an analogous property is inherited by Schatten norms.
 > $$
 > \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
 > \le
-> \lVert A\rVert_{S_{p}}\;\lVert B\rVert_{S_{q}}.
+> \lVert A\rVert_{S_{p}}\lVert B\rVert_{S_{q}}.
 > $$
 
 \[Remark\] Indeed, the direct form of the inequality should be $\lVert A^{\ast}B\rVert_{S_1}\le \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}$. However, since $\bigl|\mathrm{tr}(A^{\ast}B)\bigr|\le \lVert A^{\ast}B\rVert_{S_1}$, we often use the trace form above, which is usually more convenient in applications.
@@ -107,17 +108,13 @@ It's worthwhile to note the following three famous special cases of this inequal
   $$
   \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
   \le
-  \lVert A\rVert_F\,\lVert B\rVert_F.
+  \lVert A\rVert_F \lVert B\rVert_F.
   $$
 
 - $p=1,q=\infty$ gives **nuclear--spectral duality**:
 
   $$
-  \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
-  \le
-  \lVert A\rVert_{S_{1}}\,\lVert B\rVert_{S_{\infty}}
-  =
-  \lVert A\rVert_{\ast}\,\lVert B\rVert_2.
+  \bigl|\mathrm{tr}(A^{\ast}B)\bigr| \le \lVert A\rVert_{S_{1}}\,\lVert B\rVert_{S_{\infty}} = \lVert A\rVert_{\ast} \lVert B\rVert_2.
   $$
 
 - $A=B$ gives a **Schatten norm inequality**:
@@ -125,7 +122,7 @@ It's worthwhile to note the following three famous special cases of this inequal
   $$
   \lVert A\rVert_F^2
   \le
-  \lVert A\rVert_{S_{p}}\,\lVert A\rVert_{S_{q}}.
+  \lVert A\rVert_{S_{p}}\lVert A\rVert_{S_{q}}.
   $$
 
 
@@ -189,7 +186,7 @@ As you can see, the von Neumann trace inequality and the Schatten Hölder inequa
 Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have
 
 $$
-\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B) \le \|\sigma(A)\|_p\,\|\sigma(B)\|_q = \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
+\sum_{i=1}^r \sigma_i(A) \sigma_i(B) \le \lVert\sigma(A)\rVert_p\,\lVert\sigma(B)\rVert_q = \lVert A\rVert_{S_p} \lVert B\rVert_{S_q}.
 $$
 
 In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since
@@ -267,11 +264,7 @@ Another related theorem can be found in Theorem (7.4.10) of the book *Matrix Ana
 Now consider the second inequality:
 
 $$
-\sum_{i=1}^{r} \sigma_i(A)\,\sigma_i(B)
-=
-\langle \sigma(A),\sigma(B) \rangle
-\le
-\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
+\sum_{i=1}^{r} \sigma_i(A)\,\sigma_i(B) = \langle \sigma(A),\sigma(B) \rangle \le \lVert A\rVert_{S_p}\lVert B\rVert_{S_q}.
 $$
 
 Well, this case is rather simple. For $1<p<\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
@@ -295,15 +288,12 @@ $$
 By the sandwiching in Corollary 3.1, we conclude the following simple but important result:
 
 > **Corollary 4.2 (Equality in Schatten Hölder).**  
-> The equality
-> $\bigl|\mathrm{tr}(A^{\ast}B)\bigr|
-> =
-> \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}$
+> The equality $\bigl|\mathrm{tr}(A^{\ast}B)\bigr|  = \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}$
 > holds if and only if both inequalities in §4.1 (von Neumann trace inequality)
 > and §4.2 (vector Hölder inequality) are equalities, or equivalently,
+>
 > $$
-> B = c\,A|A|^{p-2},
-> \quad \text{for some } c\in\mathbb{C}.
+> B = c\,A|A|^{p-2}, \quad \text{for some } c\in\mathbb{C}.
 > $$
 
 Intuitively, the equality in Schatten Hölder requires:
@@ -371,9 +361,7 @@ As far as I can conclude, this is often preferable for at least the following re
 - **Duality.**
   Schatten--Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:
   $$
-  \sup_{\lVert X\rVert_{S_1}\le 1}\mathrm{tr}(G^{\ast}X)
-  =
-  \lVert G\rVert_{S_{\infty}}.
+  \sup_{\lVert X\rVert_{S_1}\le 1}\mathrm{tr}(G^{\ast}X) =\lVert G\rVert_{S_{\infty}}.
   $$
   This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal--dual derivations.
 
