@@ -12,16 +12,7 @@ CHERISH, 2026.2.6
 
 [TL;DR] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 $$
-\underbrace{
-\overbrace{
-|\mathrm{tr}(A^*B)|
-;\le;
-\underbrace{|A^*B|{S_1}}{=\sum_i\sigma_i(A^*B)}
-;\le;
-\sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B)
-;\le;
-|A|{S_p}|B|{S_q}}{\text{vector Hölder }}}{\text{Schatten Hölder}}
-.
+\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{|A^*B|{S_1}}{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  |A|{S_p}|B|{S_q}}{\text{vector Hölder }}}{\text{Schatten Hölder}}.
 $$
 
 Tighter or looser? That is the question for inequalities. Usually, judging whether an inequality is “good” involves a trade-off. If a bound for the inequality is too tight, it is often too restrictive, working only under strong conditions and becoming hard to reuse in other arguments. On the other hand, if a bound is too loose, it is often too weak, giving a correct statement but one that does not meaningfully constrain the quantity of interest. This trade-off is why people often look for something &ldquo;between&rdquo; the inequalities: an estimate that is tight enough to retain the right information, while still flexible enough to be reusable across different contexts. That is exactly the motivation behind the question in the title of this post.">
@@ -87,23 +78,37 @@ Tighter or looser? That is the question for inequalities. Usually, judging wheth
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        {left: "$$", right: "$$", display: true},
-        {left: "$", right: "$", display: false}
-      ],
-      throwOnError: false
-    });
-  });
+</script><script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
 </script>
 
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 
 </head>
@@ -214,18 +219,9 @@ Tighter or looser? That is the question for inequalities. Usually, judging wheth
   <div class="post-content"><h2 id="another-perspective-on-the-von-neumann-trace-inequality">Another perspective on the von Neumann trace inequality<a hidden class="anchor" aria-hidden="true" href="#another-perspective-on-the-von-neumann-trace-inequality">#</a></h2>
 <p>CHERISH, 2026.2.6</p>
 <hr>
-<p>[TL;DR] In this blog, I explain the following chain of inequalities, as well as other related concepts.
-$$
-\underbrace{
-\overbrace{
-|\mathrm{tr}(A^*B)|
-;\le;
-\underbrace{|A^*B|<em>{S_1}}</em>{=\sum_i\sigma_i(A^*B)}
-;\le;
-\sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B)
-;\le;
-|A|<em>{S_p}|B|</em>{S_q}}<em>{\text{vector Hölder }}}</em>{\text{Schatten Hölder}}
-.
+<p>[TL;DR] In this blog, I explain the following chain of inequalities, as well as other related concepts.</p>
+<p>$$
+\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{|A^*B|<em>{S_1}}</em>{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  |A|<em>{S_p}|B|</em>{S_q}}<em>{\text{vector Hölder }}}</em>{\text{Schatten Hölder}}.
 $$</p>
 <hr>
 <p><em>Tighter or looser? That is the question for inequalities.</em> Usually, judging whether an inequality is “good” involves a trade-off. If a bound for the inequality is <strong>too tight</strong>, it is often too restrictive, working only under strong conditions and becoming hard to reuse in other arguments. On the other hand, if a bound is <strong>too loose</strong>, it is often too weak, giving a correct statement but one that does not meaningfully constrain the quantity of interest. This trade-off is why people often look for something &ldquo;between&rdquo; the inequalities: an estimate that is <strong>tight enough to retain the right information</strong>, while still <strong>flexible enough to be reusable</strong> across different contexts. That is exactly the motivation behind the question in the title of this post.</p>
@@ -237,8 +233,10 @@ $|\mathrm{tr}(A^*B)|$, for matrices $A,B\in\mathbb{C}^{m\times n}$. To my knowle
 </ol>
 <p>What are their connections? How to use them properly? We set out to answer these questions in this post.</p>
 <hr>
-<p>Here are some notations we will adopt in this blog. Let matrices $A,B \in \mathbb{C}^{m \times n}$. By default, we assume that the singular values (denoted by $\sigma$) of those matrices are listed in descending order, i.e.
-$$\sigma_1(A)\ge \sigma_2(A)\ge \cdots \ge \sigma_q(A)\ge 0,\qquad q:=\min{m,n}.$$</p>
+<p>Here are some notations we will adopt in this blog. Let matrices $A,B \in \mathbb{C}^{m \times n}$. By default, we assume that the singular values (denoted by $\sigma$) of those matrices are listed in descending order, i.e.</p>
+<p>$$
+\sigma_1(A)\ge \sigma_2(A)\ge \cdots \ge \sigma_q(A)\ge 0,\qquad q:=\min{m,n}.
+$$</p>
 <h2 id="1-schatten-norms-and-schatten-hölder-inequality">1. Schatten norms and Schatten Hölder Inequality<a hidden class="anchor" aria-hidden="true" href="#1-schatten-norms-and-schatten-hölder-inequality">#</a></h2>
 <p>Defining a meaning norm for a matrix is not that trivial (at least not as trivial as vector cases). Basically, there are three natural perspectives towards the matrix norms, each rooted in classical vector norms:</p>
 <ul>
@@ -252,29 +250,50 @@ Here I want to clarify that the above three are &ldquo;perspectives&rdquo; inste
 <strong>Definition (Schatten $p$-norm).</strong><br>
 Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of (A), where $q=\min{m,n}$. The Schatten $p$-norm (denoted as $|\cdot|<em>{S_p}$) is defined by<br>
 $$
-|A|</em>{S_p}:=
-\begin{cases}
-\Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, &amp; 1\le p&lt;\infty,\[4pt]
-\sigma_1(A), &amp; p=\infty.
-\end{cases}
+|A|</em>{S_p}:= \begin{cases} \Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, &amp; 1\le p&lt;\infty,\ \sigma_1(A), &amp; p=\infty.\end{cases}
 $$</p>
 </blockquote>
 <p>There are several useful special cases of Schatten norms:</p>
 <ul>
-<li>$p=1$: <strong>nuclear / trace / Ky Fan norm</strong>
-$$
-|A|<em>{S_1}=|A|</em>*=\sum_{i=1}^q \sigma_i(A).
-$$</li>
-</ul>
-<ul>
-<li>$p=2$: <strong>Frobenius norm</strong>
-$$
+<li>
+<p>$p=1$: <strong>nuclear / trace / Ky Fan norm</strong></p>
+<p>$$
+|A|<em>{S_1}=|A|</em>{*}=\sum_{i=1}^q \sigma_i(A).
+$$</p>
+</li>
+<li>
+<p>$p=2$: <strong>Frobenius norm</strong></p>
+<p>$$
 |A|_{S_2}=|A|_F=\sqrt{\mathrm{tr}(A^*A)}.
-$$</li>
-<li>$p=\infty$: <strong>spectral norm</strong>
-$$
-|A|<em>{S</em>\infty}=|A|_2=\sigma_1(A).
-$$</li>
+$$</p>
+</li>
+<li>
+<p>$p=\infty$: <strong>spectral norm</strong></p>
+<p>$$
+|A|<em>{S</em>\infty} = |A|_2 = \sigma_1 (A).
+$$</p>
+</li>
+</ul>
+<p>There are several useful special cases of Schatten norms:</p>
+<ul>
+<li>
+<p>$p=1$: <strong>nuclear / trace / Ky Fan norm</strong></p>
+<p>$$
+\|A\|<em>{S_1} = \|A\|</em>{*} = \sum_{i=1}^q \sigma_i(A).
+$$</p>
+</li>
+<li>
+<p>$p=2$: <strong>Frobenius norm</strong></p>
+<p>$$
+\|A\|_{S_2} = \|A\|_F = \sqrt{\mathrm{tr}(A^*A)}.
+$$</p>
+</li>
+<li>
+<p>$p=\infty$: <strong>spectral norm</strong></p>
+<p>$$
+\|A\|<em>{S</em>\infty} = \|A\|_2 = \sigma_1 (A).
+$$</p>
+</li>
 </ul>
 <hr>
 <h3 id="the-schatten-hölder-inequality">The Schatten Hölder inequality<a hidden class="anchor" aria-hidden="true" href="#the-schatten-hölder-inequality">#</a></h3>
@@ -282,28 +301,32 @@ $$</li>
 <blockquote>
 <p>[!Theorem 1.2]
 <strong>Schatten Hölder Inequality.</strong>
-Let $1\le p,q\le\infty$ satisfy $\frac1p+\frac1q=1$. For all conformable matrices $A,B$,
-$$
+Let $1\le p,q\le\infty$ satisfy $\frac1p+\frac1q=1$. For all conformable matrices $A,B$,</p>
+<p>$$
 |\mathrm{tr}(A^*B)| \le |A|<em>{S_p},|B|</em>{S_q}. \tag{SH}
 $$</p>
 </blockquote>
 <p>[Remark] Indeed, the direct form of the inequality should be $|A^*B|<em>{S_1} \le |A|</em>{S_p},|B|<em>{S_q}$. However, since $|\mathrm{tr}(A^*B)| \le |A^*B|</em>{S_1}$, we usually utilize the form as shown in (SH), which seems to be more useful.</p>
 <p>It&rsquo;s worthwhile to note the following two famous special cases of this inequality:</p>
 <ul>
-<li>$p=q=2$ gives <strong>Frobenius Cauchy–Schwarz</strong>:
-$$
+<li>
+<p>$p=q=2$ gives <strong>Frobenius Cauchy–Schwarz</strong>:</p>
+<p>$$
 |\mathrm{tr}(A^*B)|\le |A|_F|B|_F.
-$$</li>
-<li>$p=1,q=\infty$ gives <strong>nuclear–spectral duality</strong>:
-$$
+$$</p>
+</li>
+<li>
+<p>$p=1,q=\infty$ gives <strong>nuclear–spectral duality</strong>:</p>
+<p>$$
 |\mathrm{tr}(A^<em>B)|\le |A|<em>{S_1}|B|</em>{S_\infty}=|A|_</em>|B|_2.
-$$</li>
-</ul>
-<ul>
-<li>$A=B$ gives <strong>Schatten norm inequality</strong>:
-$$
+$$</p>
+</li>
+<li>
+<p>$A=B$ gives <strong>Schatten norm inequality</strong>:</p>
+<p>$$
 |A|<em>F^2\le|A|</em>{S_p}|A|_{S_q}
-$$</li>
+$$</p>
+</li>
 </ul>
 <hr>
 <h2 id="2-the-von-neumann-trace-inequality">2. The von Neumann trace inequality<a hidden class="anchor" aria-hidden="true" href="#2-the-von-neumann-trace-inequality">#</a></h2>
@@ -311,71 +334,54 @@ $$</li>
 <blockquote>
 <p>[!Theorem 2.1]
 <strong>von Neumann trace inequality (rectangular).</strong><br>
-For $A,B\in\mathbb{C}^{m\times n}$ and $r=\min{m,n}$,
-$$
-|\mathrm{tr}(A^*B)|
-\le
-\sum_{i=1}^r \sigma_i(A)\sigma_i(B).
-\tag{VN}
+For $A,B\in\mathbb{C}^{m\times n}$ and $r=\min{m,n}$,</p>
+<p>$$
+|\mathrm{tr}(A^*B)| \le \sum_{i=1}^r \sigma_i(A)\sigma_i(B). \tag{VN}
 $$</p>
 </blockquote>
-<h1 id="sum_i1r-sigma_iasigma_ib">Note that the right-hand side is the inner product of singular-value vectors:
-$$
-\sum_{i=1}^r \sigma_i(A)\sigma_i(B)</h1>
-<p>\langle \sigma(A),\sigma(B)\rangle.
-$$
-As pointed out in the book <em>Topics in Matrix Analysis</em> (where, unfortunately, the von Neumann trace inequality is presented only as an exercise, in page 182-183), the inequality is the immediate consequence of following two classical singular-value inequalities.</p>
+<p>Note that the right-hand side is the inner product of singular-value vectors:</p>
+<p>$$
+\sum_{i=1}^r \sigma_i(A)\sigma_i(B) = \langle \sigma(A),\sigma(B)\rangle.
+$$</p>
+<p>As pointed out in the book <em>Topics in Matrix Analysis</em> (where, unfortunately, the von Neumann trace inequality is presented only as an exercise, in page 182-183), the inequality is the immediate consequence of following two classical singular-value inequalities.</p>
 <blockquote>
 <p>[!Lemma 2.2]
 <strong>Lemma (Eigenvalues vs singular values).</strong><br>
 Let $A \in M_n$ have eigenvalues ${\lambda_1(A),\dots,\lambda_n(A)}$ ordered such that $|\lambda_1(A)| \ge \cdots \ge |\lambda_n(A)|$, and singular values $\sigma_1(A) \ge \cdots \ge \sigma_n(A) \ge 0$.  Then, for every $k=1,\dots,n$,
 $$
-\sum_{i=1}^k |\lambda_i(A)| ;\le; \sum_{i=1}^k \sigma_i(A).
-$$
-In particular,
-$$
-|\mathrm{tr}(A)| ;\le; \sum_{i=1}^n \sigma_i(A).
+\sum_{i=1}^k |\lambda_i(A)| \le \sum_{i=1}^k \sigma_i(A).
+$$</p>
+<p>In particular,</p>
+<p>$$
+|\mathrm{tr}(A)| \le \sum_{i=1}^n \sigma_i(A).
 $$</p>
 </blockquote>
-<div id="lem-product"></div>
-<div id="lem-product"></div>
-> [!Lemma 2.3]
-> <span id="lem-product"></span>
-> **Lemma (Singular values of product).**  
-> Let $A \in M_{n,t}$ and $B \in M_{t,m}$, and set $r = \min\{n,t,m\}$. Denote the ordered singular values of $A$, $B$, and $AB$ by $\sigma_1(A) \ge \cdots \ge \sigma_{\min(n,t)}(A)$, $\sigma_1(B) \ge \cdots \ge \sigma_{\min(t,m)}(B)$, and $\sigma_1(AB) \ge \cdots \ge \sigma_r(AB)$. Then, for every $k=1,\dots,r$,
-> $$
-> \sum_{i=1}^k \sigma_i(AB)
-> \;\le\;
-> \sum_{i=1}^k \sigma_i(A)\,\sigma_i(B).
-> $$
-<p>While Lemma 2.2 can be proved directly from the SVD, the proof of Lemma 2.3 is more subtle. A standard route is to view it as a weak majorization statement for singular values,
+<blockquote>
+<p>[!Lemma 2.3]
+<strong>Lemma (Singular values of product).</strong><br>
+Let $A \in M_{n,t}$ and $B \in M_{t,m}$, and set $r = \min{n,t,m}$. Denote the ordered singular values of $A$, $B$, and $AB$ by $\sigma_1(A) \ge \cdots \ge \sigma_{\min(n,t)}(A)$, $\sigma_1(B) \ge \cdots \ge \sigma_{\min(t,m)}(B)$, and $\sigma_1(AB) \ge \cdots \ge \sigma_r(AB)$. Then, for every $k=1,\dots,r$,
 $$
+\sum_{i=1}^k \sigma_i(AB) \le \sum_{i=1}^k \sigma_i(A),\sigma_i(B).
+$$</p>
+</blockquote>
+<p>While Lemma 2.2 can be proved directly from the SVD, the proof of Lemma 2.3 is more subtle. A standard route is to view it as a weak majorization statement for singular values,</p>
+<p>$$
 \sigma(AB)\ \prec_w\ \sigma(A)\odot\sigma(B),
-$$
-and then derive the partial-sum inequalities from majorization theory. However, we will not pursue the full proof here.</p>
+$$</p>
+<p>and then derive the partial-sum inequalities from majorization theory. However, we will not pursue the full proof here.</p>
 <hr>
 <h2 id="3-the-connection">3. The connection<a hidden class="anchor" aria-hidden="true" href="#3-the-connection">#</a></h2>
 <p>As you can see, the von Neumann trace inequality and the Schatten Hölder inequality both seek for a bound of $|\mathrm{tr}(A^*B)|$. Then the problem arises:</p>
 <p><strong>What are their connections?</strong></p>
-<p>Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have
-$$
+<p>Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have</p>
+<p>$$
 \sum_{i=1}^r \sigma_i(A)\sigma_i(B)\le |\sigma(A)|<em>p|\sigma(B)|<em>q = |A|</em>{S_p},|B|</em>{S_q}.
-$$
-In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since $|\mathrm{tr}(A^*B)| \le |A^*B|<em>{S_1}$ and $|A^*B|</em>{S_1} = \sum_i \sigma_i(A^*B)$, for $\frac1p+\frac1q=1$, we have the following important inequality chain:</p>
+$$</p>
+<p>In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since $|\mathrm{tr}(A^*B)| \le |A^*B|<em>{S_1}$ and $|A^*B|</em>{S_1} = \sum_i \sigma_i(A^*B)$, for $\frac1p+\frac1q=1$, we have the following important inequality chain:</p>
 <blockquote>
-<p>[!Corollary 3.1]
-$$
-\underbrace{
-\overbrace{
-|\mathrm{tr}(A^*B)|
-;\le;
-\underbrace{|A^*B|<em>{S_1}}</em>{=\sum_i\sigma_i(A^*B)}
-;\le;
-\sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B)
-;\le;
-|A|<em>{S_p}|B|</em>{S_q}}<em>{\text{vector Hölder }}}</em>{\text{Schatten Hölder}}
-.
-\tag{Chain}
+<p>[!Corollary 3.1]</p>
+<p>$$
+\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{|A^*B|<em>{S_1}}</em>{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  |A|<em>{S_p}|B|</em>{S_q}}<em>{\text{vector Hölder }}}</em>{\text{Schatten Hölder}}. \tag{Chain}
 $$</p>
 </blockquote>
 <p>I believe the inequalities in Corollary 3.1 is enough to answer the questions in the title of this blog, i.e. <strong>What’s Between the Schatten Hölder Inequality?</strong>  However, to better understand the intrinsic properties of these inequalities, it is natural to go one step further: <strong>when is the inequality strict, and when do we have equality?</strong></p>
@@ -388,16 +394,15 @@ $$</p>
 <h2 id="4-equality-conditions-for-schatten-hölder">4. Equality conditions for Schatten Hölder<a hidden class="anchor" aria-hidden="true" href="#4-equality-conditions-for-schatten-hölder">#</a></h2>
 <p>A more interesting question, however, is: when does the entire chain become tight? In what follows, we examine the equality conditions for each inequality in the chain.</p>
 <h3 id="41-equality-in-von-neumann-singular-vector-alignment">4.1. Equality in von Neumann: <strong>singular vector alignment</strong><a hidden class="anchor" aria-hidden="true" href="#41-equality-in-von-neumann-singular-vector-alignment">#</a></h3>
-<p>Equality in von Neumann trace inequality, i.e.
-$$
-|\mathrm{tr}(A^<em>B)|=\sum_{i=1}^q \sigma_i(A)\sigma_i(B),
-$$
-holds (informally) if and only if $A$ and $B$ share a common singular vector basis. Mathematically, the condition will be: there exist unitary matrices $U\in \mathbb{U}(m)$ and $V\in \mathbb{U}(n)$ such that
-$$
-A = U,\Sigma_A,V^</em>,\qquad
-B = U,\Sigma_B,V^*,
-$$
-where $\Sigma_A,\Sigma_B$ are rectangular diagonal with the singular values on the diagonal in the same order. Specifically, we can choose $\tilde{\Sigma}_A = \mathrm{diag}(\sigma_1(A),\cdots,\sigma_r(A))$ and $\tilde{\Sigma}_B = \mathrm{diag}(\sigma_1(B),\cdots,\sigma_r(B))$; and $\Sigma = [\tilde{\Sigma}, ; 0]$, or $\Sigma = [\tilde{\Sigma}, ; 0]^\top$, depending on the dimension of $\mathbb{C}^{m\times n}$.</p>
+<p>Equality in von Neumann trace inequality, i.e.</p>
+<p>$$
+|\mathrm{tr}(A^*B)|=\sum_{i=1}^q \sigma_i(A)\sigma_i(B),
+$$</p>
+<p>holds (informally) if and only if $A$ and $B$ share a common singular vector basis. Mathematically, the condition will be: there exist unitary matrices $U\in \mathbb{U}(m)$ and $V\in \mathbb{U}(n)$ such that</p>
+<p>$$
+A = U \Sigma_A V^<em>,\qquad B = U \Sigma_B V^</em>,
+$$</p>
+<p>where $\Sigma_A,\Sigma_B$ are rectangular diagonal with the singular values on the diagonal in the same order. Specifically, we can choose $\tilde{\Sigma}_A = \mathrm{diag}(\sigma_1(A),\cdots,\sigma_r(A))$ and $\tilde{\Sigma}_B = \mathrm{diag}(\sigma_1(B),\cdots,\sigma_r(B))$; and $\Sigma = [\tilde{\Sigma}, ; 0]$, or $\Sigma = [\tilde{\Sigma}, ; 0]^\top$, depending on the dimension of $\mathbb{C}^{m\times n}$.</p>
 <p>[Remark] Interestingly, I find another equivalent condition, which seems to be more &ldquo;clean&rdquo;: Equality holds if and only if $\lambda_i(A^*B)=\sigma_i(A)\sigma_i(B)$.</p>
 <p>Another related theorem can be found in Theorem (7.4.10) of the book <em>Matrix Analysis</em> by Roger A. Horn, which states as follows:</p>
 <blockquote>
@@ -411,34 +416,30 @@ $$
 $$</p>
 </blockquote>
 <h3 id="42-equality-in-the-vector-hölder-step-singular-value-proportionality">4.2. Equality in the vector Hölder step: <strong>singular value proportionality</strong><a hidden class="anchor" aria-hidden="true" href="#42-equality-in-the-vector-hölder-step-singular-value-proportionality">#</a></h3>
-<p>Now consider the second inequality:
-$$
+<p>Now consider the second inequality:</p>
+<p>$$
 \sum_{i=1}^r \sigma_i(A)\sigma_i(B)=\langle \sigma(A),\sigma(B)\rangle\le |A|<em>{S_p}|B|</em>{S_q}.
-$$
-Well, this case is rather simple. For $1&lt;p&lt;\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
-there exists $c&gt;0$ such that
-$$
+$$</p>
+<p>Well, this case is rather simple. For $1&lt;p&lt;\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
+there exists $c&gt;0$ such that</p>
+<p>$$
 \sigma_i(A)^p = c,\sigma_i(B)^q
 \quad \text{for all } i \text{ on the common support},
-$$
-or equivalently,
-$$
+$$</p>
+<p>or equivalently,</p>
+<p>$$
 \sigma(B)\ \propto\ \sigma(A)^{p-1}.
-$$
-[Remark] The case $p=1,q=\infty$ will be a bit different. It has something like “support on maximizers” condition, but the idea is the same.</p>
+$$</p>
+<p>[Remark] The case $p=1,q=\infty$ will be a bit different. It has something like “support on maximizers” condition, but the idea is the same.</p>
 <h3 id="43-equality-in-schatten-hölder-direction--magnitude">4.3. Equality in Schatten Hölder: direction + magnitude<a hidden class="anchor" aria-hidden="true" href="#43-equality-in-schatten-hölder-direction--magnitude">#</a></h3>
 <p>By the sandwiching in Corollary 3.1, we conclude the following simple but important result:</p>
 <blockquote>
 <p>[!Corollary 4.2]
 <strong>Equality in Schatten Hölder.</strong><br>
-The equality
-$$
-|\mathrm{tr}(A^*B)|=|A|<em>{S_p}|B|</em>{S_q}
-$$
-holds if and only if <strong>both</strong> inequalities in §4.1 (von Neumann trace inequality)
+The equality $ |\mathrm{tr}(A^*B)|=|A|<em>{S_p}|B|</em>{S_q}$ holds if and only if <strong>both</strong> inequalities in §4.1 (von Neumann trace inequality)
 and §4.2 (vector Hölder inequality) are equalities, or equivalently,
 $$
-B ;=; c,A|A|^{p-2},
+B = c A|A|^{p-2},
 \quad\text{for some } c\in\mathbb{C}.
 $$</p>
 </blockquote>
@@ -452,51 +453,51 @@ $$</p>
 <h2 id="5-further-discussions">5. Further discussions<a hidden class="anchor" aria-hidden="true" href="#5-further-discussions">#</a></h2>
 <h3 id="51-is-von-neumann-trace-inequality-always-more-preferable">5.1. Is von Neumann trace inequality always more preferable?<a hidden class="anchor" aria-hidden="true" href="#51-is-von-neumann-trace-inequality-always-more-preferable">#</a></h3>
 <p>We have seen that the von Neumann trace inequality is generally tighter than the Schatten–Hölder inequality. However, <em>being tighter does not mean being universally more useful</em>. In practice, the two inequalities serve different analytical purposes, and neither strictly dominates the other. Here is a practical example:</p>
-<p>In matrix-parameter gradient discent, we usually consider the trace pairing between a (stochastic) gradient-like matrix $G$ and an update direction $\Delta W$:
-$$
-\langle G,\Delta W\rangle_F ;=; \mathrm{tr}(G^<em>\Delta W).
-$$
-In many algorithms, the update is designed or analyzed under a constraint of the form
-$$
+<p>In matrix-parameter gradient discent, we usually consider the trace pairing between a (stochastic) gradient-like matrix $G$ and an update direction $\Delta W$:</p>
+<p>$$
+\langle G,\Delta W\rangle_F = \mathrm{tr}(G^*\Delta W).
+$$</p>
+<p>In many algorithms, the update is designed or analyzed under a constraint of the form</p>
+<p>$$
 |\Delta W|_{S_p} \le \eta,
-$$
-where $p$ depends on the geometry we want to enforce (e.g., low-rank bias via nuclear norm, stability via spectral norm, or others). In this setting, Schatten&ndash;Hölder gives an immediate and modular bound:
-$$
-|\mathrm{tr}(G^</em>\Delta W)|
-;\le;
-|G|<em>{S_q},|\Delta W|</em>{S_p},
-\qquad
-\frac{1}{p}+\frac{1}{q}=1,
-$$
-hence $|\mathrm{tr}(G^*\Delta W)|;\le;\eta,|G|_{S_q}.$</p>
+$$</p>
+<p>where $p$ depends on the geometry we want to enforce (e.g., low-rank bias via nuclear norm, stability via spectral norm, or others). In this setting, Schatten&ndash;Hölder gives an immediate and modular bound:</p>
+<p>$$
+|\mathrm{tr}(G^*\Delta W)| \le |G|<em>{S_q},|\Delta W|</em>{S_p}, \qquad \frac{1}{p}+\frac{1}{q}=1,
+$$</p>
+<p>hence $|\mathrm{tr}(G^*\Delta W)| \le \eta |G|_{S_q}$.</p>
 <p>As far as I can conclude, this is often preferable for at least the following reasons:</p>
 <ul>
 <li>
 <p><strong>Exponent matching (geometry awareness).</strong><br>
-You can tune $(p,q)$ to match what you control. For instance, if your update is nuclear-norm bounded ($p=1$), then $q=\infty$ and$$
-|\mathrm{tr}(G^<em>\Delta W)| \le |G|<em>{S</em>\infty},|\Delta W|_{S_1}.
-$$
-If your update is spectral-norm bounded ($p=\infty$), then $q=1$ and$$
-|\mathrm{tr}(G^</em>\Delta W)| \le |G|<em>{S_1},|\Delta W|</em>{S_\infty}.
-$$
-By contrast, the von Neumann form$$
+You can tune $(p,q)$ to match what you control. For instance, if your update is nuclear-norm bounded ($p=1$), then $q=\infty$ and</p>
+<p>$$
+|\mathrm{tr}(G^*\Delta W)| \le |G|<em>{S</em>\infty},|\Delta W|_{S_1}.
+$$</p>
+<p>If your update is spectral-norm bounded ($p=\infty$), then $q=1$ and</p>
+<p>$$
+|\mathrm{tr}(G^*\Delta W)| \le |G|<em>{S_1} |\Delta W|</em>{S_\infty}.
+$$</p>
+<p>By contrast, the von Neumann form</p>
+<p>$$
 |\mathrm{tr}(G^*\Delta W)| \le \sum_i \sigma_i(G)\sigma_i(\Delta W)
-$$
-is sharper but has less build-in information when you need to interface with norm constraints.</p>
+$$</p>
+<p>is sharper but has less build-in information when you need to interface with norm constraints.</p>
 </li>
 <li>
-<p><strong>Duality</strong>
-Schatten&ndash;Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:$$
-\sup_{|X|<em>{S_1}\le 1}\mathrm{tr}(G^*X) ;=; |G|</em>{S_\infty}.
-$$
-This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal&ndash;dual derivations.</p>
+<p><strong>Duality.</strong>
+Schatten&ndash;Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:</p>
+<p>$$
+\sup_{|X|<em>{S_1}\le 1}\mathrm{tr}(G^*X) = |G|</em>{S_\infty}.
+$$</p>
+<p>This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal&ndash;dual derivations.</p>
 </li>
 </ul>
 <h3 id="52-whats-between-revisited">5.2 “What’s between” revisited<a hidden class="anchor" aria-hidden="true" href="#52-whats-between-revisited">#</a></h3>
 <p>At the end of this blog, I would like to revisit the problem &ldquo;What’s Between the Schatten Hölder Inequality?&rdquo; from a perspective of &ldquo;information&rdquo; (not those in information theory, though). Let recap the upper bound for $|\mathrm{tr}(A^*B)|$ that we&rsquo;ve discussed:</p>
 <ul>
 <li>von Neumann trace inequality provides the <strong>spectral inner product</strong> $\langle \sigma(A),\sigma(B)\rangle$,</li>
-<li>Schatten Hölder inequality replaces it by <strong>norm summaries</strong> $|\sigma(A)|<em>{\ell_p}|\sigma(B)|</em>{\ell_q}$.</li>
+<li>Schatten Hölder inequality replaces it by <strong>norm summaries</strong> $|\sigma(A)|<em>{\ell</em>{p}}|\sigma(B)|<em>{\ell</em>{q}}$.</li>
 </ul>
 <p>Therefore, the gap between them measures how much information you lose by compressing the spectrum into a single scalar.</p>
 <h3 id="exercises">(Exercises)<a hidden class="anchor" aria-hidden="true" href="#exercises">#</a></h3>
@@ -517,8 +518,8 @@ This is the standard bridge that turns trace objectives into norm bounds in anal
 <li>Braun, G., Carderera, A., Combettes, C. W., Hassani, H., Karbasi, A., Mokhtari, A., &amp; Pokutta, S. (2022). Conditional gradient methods. <em>arXiv preprint arXiv:2211.14103</em>.</li>
 </ol>
 <hr>
-<p>CHERISH
-2026.2.6, in Hong Kong</p>
+<p>CHERISH</p>
+<p>2026.2.6, in Hong Kong</p>
 
 
   </div>
