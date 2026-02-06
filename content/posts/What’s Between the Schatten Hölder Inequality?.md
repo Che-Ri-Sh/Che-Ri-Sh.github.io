@@ -56,40 +56,21 @@ There are several useful special cases of Schatten norms:
 - $p=1$: **nuclear / trace / Ky Fan norm**
 
   $$
-  \|A\|_{S_1}=\|A\|_{*}=\sum_{i=1}^q \sigma_i(A).
+  \|A\|_{S_{1}}=\|A\|_{\ast}=\sum_{i=1}^{r} \sigma_{i}(A).
   $$
   
 - $p=2$: **Frobenius norm**
 
   $$
-  \|A\|_{S_2}=\|A\|_F=\sqrt{\mathrm{tr}(A^*A)}.
+  \|A\|_{S_2}=\|A\|_F=\sqrt{\mathrm{tr}(A^{\ast}A)}.
   $$
   
 - $p=\infty$: **spectral norm**
 
   $$
-  \|A\|_{S_\infty} = \|A\|_2 = \sigma_1 (A).
+  \|A\|_{S_{\infty}} = \|A\|_2 = \sigma_1 (A).
   $$
   
-  
-There are several useful special cases of Schatten norms:
-- $p=1$: **nuclear / trace / Ky Fan norm**
-
-  $$
-  \\|A\\|_{S_1} = \\|A\\|_{*} = \sum_{i=1}^q \sigma_i(A).
-  $$
-  
-- $p=2$: **Frobenius norm**
-
-  $$
-  \\|A\\|_{S_2} = \\|A\\|_F = \sqrt{\mathrm{tr}(A^*A)}.
-  $$
-  
-- $p=\infty$: **spectral norm**
-
-  $$
-  \\|A\\|_{S_\infty} = \\|A\\|_2 = \sigma_1 (A).
-  $$
 ---
 ### The Schatten Hölder inequality
 
@@ -100,7 +81,7 @@ In measure space, we have the famous Hölder inequality: $\|fg\|_1\le \|f\|_p\|g
 > Let $1\le p,q\le\infty$ satisfy $\frac1p+\frac1q=1$. For all conformable matrices $A,B$,
 >
 > $$
-> |\mathrm{tr}(A^*B)| \le \|A\|_{S_p}\,\|B\|_{S_q}. \tag{SH}
+> |\mathrm{tr}(A^{\ast}B)| \le \|A\|_{S_p}\|B\|_{S_q}.
 > $$
 
 \[Remark\] Indeed, the direct form of the inequality should be $\|A^*B\|_{S_1} \le \|A\|_{S_p}\,\|B\|_{S_q}$. However, since $|\mathrm{tr}(A^*B)| \le \|A^*B\|_{S_1}$, we usually utilize the form as shown in (SH), which seems to be more useful.
@@ -191,7 +172,7 @@ $$
 \sum_{i=1}^r \sigma_i(A)\sigma_i(B)\le \|\sigma(A)\|_p\|\sigma(B)\|_q = \|A\|_{S_p}\,\|B\|_{S_q}.
 $$
 
-In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since $|\mathrm{tr}(A^*B)| \le \|A^*B\|_{S_1}$ and $\|A^*B\|_{S_1} = \sum_i \sigma_i(A^*B)$, for $\frac1p+\frac1q=1$, we have the following important inequality chain:
+In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since $|\mathrm{tr}(A^{\ast}B)| \le \|A^{\ast}B\|_{S_1}$ and $\|A^{\ast}B\|_{S_1} = \sum_i \sigma_i(A^{\ast}B)$, for $\frac{1}{p}+\frac{1}{q}=1$, we have the following important inequality chain:
 
 > [!Corollary 3.1]
 >
