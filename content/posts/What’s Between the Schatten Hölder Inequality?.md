@@ -305,7 +305,7 @@ hence $|\mathrm{tr}(G^*\Delta W)| \le \eta \|G\|_{S_q}$.
 
 As far as I can conclude, this is often preferable for at least the following reasons:
 
-* **Exponent matching (geometry awareness).**  
+- **Exponent matching (geometry awareness).**  
 	You can tune $(p,q)$ to match what you control. For instance, if your update is nuclear-norm bounded ($p=1$), then $q=\infty$ and
 	
 	$$
@@ -326,11 +326,11 @@ As far as I can conclude, this is often preferable for at least the following re
 	
 	is sharper but has less build-in information when you need to interface with norm constraints.
 
-* **Duality**
+- **Duality.**
 	Schatten--Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:
 	
 	$$
-	\sup_{\|X\|_{S_1}\le 1}\mathrm{tr}(G^*X) \;=\; \|G\|_{S_\infty}.
+	\sup_{\|X\|_{S_1}\le 1}\mathrm{tr}(G^*X) = \|G\|_{S_\infty}.
 	$$
 	
 	This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal--dual derivations.
@@ -340,7 +340,8 @@ As far as I can conclude, this is often preferable for at least the following re
 At the end of this blog, I would like to revisit the problem "What’s Between the Schatten Hölder Inequality?" from a perspective of "information" (not those in information theory, though). Let recap the upper bound for $|\mathrm{tr}(A^*B)|$ that we've discussed:
 
 - von Neumann trace inequality provides the **spectral inner product** $\langle \sigma(A),\sigma(B)\rangle$,
-- Schatten Hölder inequality replaces it by **norm summaries** $\|\sigma(A)\|_{\ell_p}\|\sigma(B)\|_{\ell_q}$.
+- Schatten Hölder inequality replaces it by **norm summaries** $\|\sigma(A)\|_{\ell_{p}}\|\sigma(B)\|_{\ell_{q}}$.
+
 
 Therefore, the gap between them measures how much information you lose by compressing the spectrum into a single scalar.
 
