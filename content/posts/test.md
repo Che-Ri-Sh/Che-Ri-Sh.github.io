@@ -11,3 +11,9 @@ Display math:
 $$
 \int_0^1 \sin y \, dy.
 $$
+
+- $p=q=2$ gives **Frobenius Cauchy–Schwarz**:
+
+  $$
+  |\mathrm{tr}(A^*B)|\le \|A\|_F\|B\|_F.
+  $$
