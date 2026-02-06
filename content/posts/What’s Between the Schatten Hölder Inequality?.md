@@ -138,10 +138,8 @@ As pointed out in the book *Topics in Matrix Analysis* (where, unfortunately, th
 > |\mathrm{tr}(A)| \;\le\; \sum_{i=1}^n \sigma_i(A).
 > $$
 
-<div id="lem-product"></div>
-<div id="lem-product"></div>
+
 > [!Lemma 2.3]
-> <span id="lem-product"></span>
 > **Lemma (Singular values of product).**  
 > Let $A \in M_{n,t}$ and $B \in M_{t,m}$, and set $r = \min\{n,t,m\}$. Denote the ordered singular values of $A$, $B$, and $AB$ by $\sigma_1(A) \ge \cdots \ge \sigma_{\min(n,t)}(A)$, $\sigma_1(B) \ge \cdots \ge \sigma_{\min(t,m)}(B)$, and $\sigma_1(AB) \ge \cdots \ge \sigma_r(AB)$. Then, for every $k=1,\dots,r$,
 > $$
@@ -237,14 +235,18 @@ $$
 $$
 Well, this case is rather simple. For $1<p<\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
 there exists $c>0$ such that
+
 $$
 \sigma_i(A)^p = c\,\sigma_i(B)^q
 \quad \text{for all } i \text{ on the common support},
 $$
+
 or equivalently,
+
 $$
 \sigma(B)\ \propto\ \sigma(A)^{p-1}.
 $$
+
 \[Remark\] The case $p=1,q=\infty$ will be a bit different. It has something like “support on maximizers” condition, but the idea is the same.
 
 ### 4.3. Equality in Schatten Hölder: direction + magnitude
@@ -280,14 +282,19 @@ This might also explain why Schatten Hölder seems “rarer” than von Neumann 
 We have seen that the von Neumann trace inequality is generally tighter than the Schatten–Hölder inequality. However, *being tighter does not mean being universally more useful*. In practice, the two inequalities serve different analytical purposes, and neither strictly dominates the other. Here is a practical example:
 
 In matrix-parameter gradient discent, we usually consider the trace pairing between a (stochastic) gradient-like matrix $G$ and an update direction $\Delta W$:
+
 $$
 \langle G,\Delta W\rangle_F \;=\; \mathrm{tr}(G^*\Delta W).
 $$
+
 In many algorithms, the update is designed or analyzed under a constraint of the form
+
 $$
 \|\Delta W\|_{S_p} \le \eta,
 $$
+
 where $p$ depends on the geometry we want to enforce (e.g., low-rank bias via nuclear norm, stability via spectral norm, or others). In this setting, Schatten--Hölder gives an immediate and modular bound:
+
 $$
 |\mathrm{tr}(G^*\Delta W)|
 \;\le\;
@@ -295,7 +302,8 @@ $$
 \qquad
 \frac{1}{p}+\frac{1}{q}=1,
 $$
-hence $|\mathrm{tr}(G^*\Delta W)|\;\le\;\eta\,\|G\|_{S_q}.$
+
+hence $|\mathrm{tr}(G^*\Delta W)|\;\le\;\eta\,\|G\|_{S_q}$.
 
 As far as I can conclude, this is often preferable for at least the following reasons:
 
