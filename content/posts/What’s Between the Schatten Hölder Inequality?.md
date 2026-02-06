@@ -13,7 +13,10 @@ CHERISH, 2026.2.6
 \[TL;DR\] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 
 $$
-\underbrace{\overbrace{ |\mathrm{tr}(A^{\ast}B)| \le \underbrace{\|A^{\ast}B\|_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
+\underbrace{\overbrace{ \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+\le \underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)}
+\le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}
+\underbrace{\sigma_i(B) \le  \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
 $$
 
 ---
@@ -47,87 +50,84 @@ Defining a meaning norm for a matrix is not that trivial (at least not as trivia
 Here I want to clarify that the above three are "perspectives" instead of "categories". They can overlap (for instance, the spectral norm is both an operator norm and a Schatten norm), and they certainly do not exhaust all matrix norms of interest. Still, the motivations behind these perspectives are, in my opinion, genuinely distinct; and keeping them separate helps explain why different norms arise naturally in different settings. In this article, we mainly focus on Schatten norms (we may discuss others in future posts, though).
 
 > **Definition 1.1 (Schatten $p$-norm).**  
-> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined by  
+> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined as follows:  
+> When $1\le p<\infty$:
+> $$
+> \lVert A\rVert_{S_p}:=\left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p},
+> $$
 >
+> when $p=\infty$:
 > $$
-> \lVert A\rVert_{S_p}:=
-> \begin{cases}
-> \left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p}, & 1\le p<\infty,\\
-> \sigma_1(A), & p=\infty.
-> \end{cases}
+> \lVert A\rVert_{S_\infty}:=\sigma_1(A).
 > $$
-
-
-<blockquote>
-<p><strong>Definition 1.1 (Schatten <span class="math">\(p\)</span>-norm).</strong><br>
-Let <span class="math">\(A\in\mathbb{C}^{m\times n}\)</span> and let
-<span class="math">\(\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0\)</span>
-denote the singular values of <span class="math">\(A\)</span>, where
-<span class="math">\(q=\min\lbrace m,n\rbrace\)</span>.
-The Schatten <span class="math">\(p\)</span>-norm is defined by</p>
-
-$$
-\lVert A\rVert_{S_p}:=
-\begin{cases}
-\left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p}, & 1\le p<\infty,\\
-\sigma_1(A), & p=\infty.
-\end{cases}
-$$
-</blockquote>
-
-
+  
 There are several useful special cases of Schatten norms:
+
 - $p=1$: **nuclear / trace / Ky Fan norm**
 
   $$
-  \|A\|_{S_{1}}=\|A\|_{\ast}=\sum_{i=1}^{r} \sigma_{i}(A).
+  \lVert A\rVert_{S_{1}}=\lVert A\rVert_{\ast}=\sum_{i=1}^{r} \sigma_{i}(A).
   $$
-  
+
 - $p=2$: **Frobenius norm**
 
   $$
-  \|A\|_{S_2}=\|A\|_F=\sqrt{\mathrm{tr}(A^{\ast}A)}.
+  \lVert A\rVert_{S_2}=\lVert A\rVert_F=\sqrt{\mathrm{tr}\!\left(A^{\ast}A\right)}.
   $$
-  
+
 - $p=\infty$: **spectral norm**
 
   $$
-  \|A\|_{S_{\infty}} = \|A\|_2 = \sigma_1 (A).
+  \lVert A\rVert_{S_{\infty}}=\lVert A\rVert_2=\sigma_1(A).
   $$
+
   
 ---
 ### The Schatten Hölder inequality
 
-In measure space, we have the famous Hölder inequality: $\|fg\|_1\le \|f\|_p\|g\|_q$, $1/p+1/q=1$. Fortunately, the analogous property is inherited for Schatten norms.
+In measure spaces, we have the famous Hölder inequality
+$\lVert fg\rVert_1\le \lVert f\rVert_p\,\lVert g\rVert_q$ with $1/p+1/q=1$.
+Fortunately, an analogous property is inherited by Schatten norms.
 
-> **Theorem 1.2 (Schatten Hölder Inequality).** 
+> **Theorem 1.2 (Schatten Hölder Inequality).**  
 > Let $1\le p,q\le\infty$ satisfy $\frac1p+\frac1q=1$. For all conformable matrices $A,B$,
 >
 > $$
-> |\mathrm{tr}(A^{\ast}B)| \le \|A\|_{S_{p}}\|B\|_{S_{q}}.
+> \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+> \le
+> \lVert A\rVert_{S_{p}}\;\lVert B\rVert_{S_{q}}.
 > $$
 
-\[Remark\] Indeed, the direct form of the inequality should be $\|A^*B\|_{S_1} \le \|A\|_{S_p}\,\|B\|_{S_q}$. However, since $|\mathrm{tr}(A^*B)| \le \|A^*B\|_{S_1}$, we usually utilize the form as shown in (SH), which seems to be more useful.
+\[Remark\] Indeed, the direct form of the inequality should be $\lVert A^{\ast}B\rVert_{S_1}\le \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}$. However, since $\bigl|\mathrm{tr}(A^{\ast}B)\bigr|\le \lVert A^{\ast}B\rVert_{S_1}$, we often use the trace form above, which is usually more convenient in applications.
 
-It's worthwhile to note the following two famous special cases of this inequality:
+It's worthwhile to note the following three famous special cases of this inequality:
 
-- $p=q=2$ gives **Frobenius Cauchy–Schwarz**:
+- $p=q=2$ gives **Frobenius Cauchy--Schwarz**:
 
   $$
-  |\mathrm{tr}(A^{\ast}B)|\le \|A\|_F \|B\|_F.
+  \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+  \le
+  \lVert A\rVert_F\,\lVert B\rVert_F.
   $$
-  
-- $p=1,q=\infty$ gives **nuclear–spectral duality**:
 
-	$$
-  |\mathrm{tr}(A^{\ast}B)| \le \|A\|_{S_{1}} \|B\|_{S_{\infty}}=\|A\|_{\ast} \|B\|_2.
+- $p=1,q=\infty$ gives **nuclear--spectral duality**:
+
   $$
-  
-- $A=B$ gives **Schatten norm inequality**:
+  \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+  \le
+  \lVert A\rVert_{S_{1}}\,\lVert B\rVert_{S_{\infty}}
+  =
+  \lVert A\rVert_{\ast}\,\lVert B\rVert_2.
+  $$
 
-	$$
-	{\|A\|_F}^2 \le \|A\|_{S_{p}} \|A\|_{S_{q}}
-	$$
+- $A=B$ gives a **Schatten norm inequality**:
+
+  $$
+  \lVert A\rVert_F^2
+  \le
+  \lVert A\rVert_{S_{p}}\,\lVert A\rVert_{S_{q}}.
+  $$
+
 
 ---
 
@@ -169,7 +169,7 @@ As pointed out in the book *Topics in Matrix Analysis* (where, unfortunately, th
 > \sum_{i=1}^k \sigma_i(AB) \le \sum_{i=1}^k \sigma_i(A)\,\sigma_i(B).
 > $$
 
-While Lemma 2.2 can be proved directly from the SVD, the proof of Lemma 2.3 is more subtle. A standard route is to view it as a weak majorization statement for singular values,
+While **Lemma 2.2** can be proved directly from the SVD, the proof of **Lemma 2.3** is more subtle. A standard route is to view it as a weak majorization statement for singular values,
 
 $$
 \sigma(AB)\ \prec_w\ \sigma(A)\odot\sigma(B),
@@ -186,27 +186,51 @@ As you can see, the von Neumann trace inequality and the Schatten Hölder inequa
 
 **What are their connections?**
 
-Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have 
+Well, actually the answer is simple but nontrivial. Applying the (vector) Hölder inequality to $\langle \sigma(A),\sigma(B)\rangle$, we have
 
 $$
-\sum_{i=1}^r \sigma_i (A)\sigma_i (B)\le {\|\sigma(A)\|}_p {\|\sigma(B)\|}_q = {\|A\|}_{S_{p}} {\|B\|}_{S_{q}}.
+\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+\le
+\|\sigma(A)\|_p\,\|\sigma(B)\|_q
+=
+\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
 $$
 
-In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since $|\mathrm{tr}(A^{\ast}B)| \le \|A^{\ast}B\|_{S_1}$ and $\|A^{\ast}B\|_{S_1} = \sum_i \sigma_i(A^{\ast}B)$, for $\frac{1}{p}+\frac{1}{q}=1$, we have the following important inequality chain:
+In other words, Schatten Hölder is a corollary of von Neumann trace inequality, obtained by applying the classical Hölder inequality to the singular-value vectors. Since
+$|\mathrm{tr}(A^{\ast}B)| \le \lVert A^{\ast}B\rVert_{S_1}$
+and
+$\lVert A^{\ast}B\rVert_{S_1} = \sum_i \sigma_i(A^{\ast}B)$,
+for $\frac{1}{p}+\frac{1}{q}=1$, we have the following important inequality chain:
 
->**Corollary 3.1**
+> **Corollary 3.1**
+>
 > $$
-> \underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{\|A^*B\|_{S_1}}_{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}. \tag{Chain}
+> \underbrace{
+> \overbrace{
+> \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+> \le
+> \underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)}
+> \le
+> \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}
+> \underbrace{\sigma_i(B)
+> \le
+> \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}
+> }_{\text{Schatten Hölder}}.
+> \tag{Chain}
 > $$
 
-I believe the inequalities in Corollary 3.1 is enough to answer the questions in the title of this blog, i.e. **What’s Between the Schatten Hölder Inequality?**  However, to better understand the intrinsic properties of these inequalities, it is natural to go one step further: **when is the inequality strict, and when do we have equality?**
+I believe the inequalities in **Corollary 3.1** is enough to answer the questions in the title of this blog, i.e. **What’s Between the Schatten Hölder Inequality?**  However, to better understand the intrinsic properties of these inequalities, it is natural to go one step further: **when is the inequality strict, and when do we have equality?**
 
 ---
 ### A quick strictness example
 
-Here is a simple one: Let $A=I_r$ and let $B$ be a rank-one matrix with singular values $\sigma(B)=(1,0,\dots,0)$. Then $|\mathrm{tr}(A^*B)|=|\mathrm{tr}(B)|\le 1$, also we have  $\sum_i \sigma_i(A)\sigma_i(B)=1$. Therefore, the von Neumann trace inequality can be tight.
+Here is a simple one: Let $A=I_r$ and let $B$ be a rank-one matrix with singular values $\sigma(B)=(1,0,\dots,0)$. Then
+$|\mathrm{tr}(A^{\ast}B)|=|\mathrm{tr}(B)|\le 1$,
+and we also have $\sum_i \sigma_i(A)\sigma_i(B)=1$. Therefore, the von Neumann trace inequality can be tight.
 
-However, $\|A\|_F\|B\|_F=\sqrt{r}\cdot 1=\sqrt{r}$, therefore the second inequality (vector Hölder) looses.
+However,
+$\lVert A\rVert_F\,\lVert B\rVert_F=\sqrt{r}\cdot 1=\sqrt{r}$,
+so the second inequality (vector Hölder) is loose.
 
 The key takeaway message is, Schatten Hölder can be weaker than von Neumann trace inequality, especially in high dimensions. The intuitive reason is that Schatten Hölder forgets where the spectrum is concentrated.
 
@@ -230,13 +254,12 @@ $$
 A = U \Sigma_A V^{\ast} ,\qquad B = U \Sigma_B V^{\ast},
 $$
 
-where $\Sigma_A,\Sigma_B$ are rectangular diagonal with the singular values on the diagonal in the same order. Specifically, we can choose $\tilde{\Sigma}_A = \mathrm{diag}(\sigma_1(A),\cdots,\sigma_r(A))$ and $\tilde{\Sigma}_B = \mathrm{diag}(\sigma_1(B),\cdots,\sigma_r(B))$; and $\Sigma = [\tilde{\Sigma}, \; 0]$, or $\Sigma = [\tilde{\Sigma}, \; 0]^\top$, depending on the dimension of $\mathbb{C}^{m\times n}$.
+where $\Sigma_A,\Sigma_B$ are rectangular diagonal with the singular values on the diagonal in the same order. Specifically, we can choose $\tilde{\Sigma}_A = \mathrm{diag}(\sigma_1(A),\cdots,\sigma_r(A))$ and $\tilde{\Sigma}_B = \mathrm{diag}(\sigma_1(B),\cdots,\sigma_r(B))$; and $\Sigma = [\tilde{\Sigma}, 0]$, or $\Sigma = [\tilde{\Sigma}, 0]^\top$, depending on the dimension of $\mathbb{C}^{m\times n}$.
 
 \[Remark\] Interestingly, I find another equivalent condition, which seems to be more "clean": Equality holds if and only if $\lambda_i(A^*B)=\sigma_i(A)\sigma_i(B)$.
 
 Another related theorem can be found in Theorem (7.4.10) of the book *Matrix Analysis* by Roger A. Horn, which states as follows:
 
-> [!Theorem 4.1]
 > **Theorem 4.1 (Exact spectral pairing).**  
 > Let $A, B \in \mathbb{C}^{m\times n}$, and denote $r := \min\{m,n\}$. Let $\sigma_1(A)\ge \cdots \ge \sigma_r(A)$ and $\sigma_1(B)\ge \cdots \ge \sigma_r(B)$ be the singular values of $A$ and $B$, respectively.  If both products $A^*B$ and $B^*A$ are positive semidefinite, then there exists a permutation $\tau$ of $\{1,\dots,r\}$ such that
 > $$
@@ -248,7 +271,11 @@ Another related theorem can be found in Theorem (7.4.10) of the book *Matrix Ana
 Now consider the second inequality:
 
 $$
-\sum_{i=1}^{r} {\sigma}_{i}(A) {\sigma}_{i}(B)=\langle \sigma(A),\sigma(B) \rangle \le {\|A\|}_{S_p} {\|B\|}_{S_q}.
+\sum_{i=1}^{r} \sigma_i(A)\,\sigma_i(B)
+=
+\langle \sigma(A),\sigma(B) \rangle
+\le
+\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}.
 $$
 
 Well, this case is rather simple. For $1<p<\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
@@ -272,11 +299,15 @@ $$
 By the sandwiching in Corollary 3.1, we conclude the following simple but important result:
 
 > **Corollary 4.2 (Equality in Schatten Hölder).**  
-> The equality $|\mathrm{tr}(A^{\ast}B)|={\|A\|}_{S_p} {\|B\|}_{S_q}$ holds if and only if both inequalities in §4.1 (von Neumann trace inequality)
+> The equality
+> $\bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+> =
+> \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}$
+> holds if and only if both inequalities in §4.1 (von Neumann trace inequality)
 > and §4.2 (vector Hölder inequality) are equalities, or equivalently,
 > $$
-> B = c A|A|^{p-2},
-> \quad\text{for some } c\in\mathbb{C}.
+> B = c\,A|A|^{p-2},
+> \quad \text{for some } c\in\mathbb{C}.
 > $$
 
 Intuitively, the equality in Schatten Hölder requires:
@@ -309,50 +340,53 @@ $$
 where $p$ depends on the geometry we want to enforce (e.g., low-rank bias via nuclear norm, stability via spectral norm, or others). In this setting, Schatten--Hölder gives an immediate and modular bound:
 
 $$
-|\mathrm{tr}(G^*\Delta W)| \le \|G\|_{S_q}\,\|\Delta W\|_{S_p}, \qquad \frac{1}{p}+\frac{1}{q}=1,
+\bigl|\mathrm{tr}(G^{\ast}\Delta W)\bigr|
+\le
+\lVert G\rVert_{S_q}\,\lVert \Delta W\rVert_{S_p},
+\qquad
+\frac{1}{p}+\frac{1}{q}=1.
 $$
 
 hence $|\mathrm{tr}(G^*\Delta W)| \le \eta \|G\|_{S_q}$.
 
 As far as I can conclude, this is often preferable for at least the following reasons:
-
+	
 - **Exponent matching (geometry awareness).**  
-	You can tune $(p,q)$ to match what you control. For instance, if your update is nuclear-norm bounded ($p=1$), then $q=\infty$ and
+  You can tune $(p,q)$ to match what you control. For instance, if your update is nuclear-norm bounded ($p=1$), then $q=\infty$ and
+  $$
+  \bigl|\mathrm{tr}(G^{\ast}\Delta W)\bigr|
+  \le
+  \lVert G\rVert_{S_{\infty}}\;\lVert \Delta W\rVert_{S_1}.
+  $$
+  If your update is spectral-norm bounded ($p=\infty$), then $q=1$ and
+  $$
+  \bigl|\mathrm{tr}(G^{\ast}\Delta W)\bigr|
+  \le
+  \lVert G\rVert_{S_1}\;\lVert \Delta W\rVert_{S_{\infty}}.
+  $$
+  By contrast, the von Neumann form
+  $$
+  \bigl|\mathrm{tr}(G^{\ast}\Delta W)\bigr|
+  \le
+  \sum_i \sigma_i(G)\,\sigma_i(\Delta W)
+  $$
+  is sharper but has less built-in information when you need to interface with norm constraints.
 	
-	$$
-	|\mathrm{tr}(G^*\Delta W)| \le {\|G\|}_{S_{\infty}} {\|\Delta W\|}_{S_1}.
-	$$
-	
-	If your update is spectral-norm bounded ($p=\infty$), then $q=1$ and
-	
-	$$
-	|\mathrm{tr}(G^*\Delta W)| \le {\|G\|}_{S_1} {\|\Delta W\|}_{S_\infty}.
-	$$
-	
-	By contrast, the von Neumann form
-	
-	$$
-	|\mathrm{tr}(G^*\Delta W)| \le \sum_i \sigma_i(G)\sigma_i(\Delta W)
-	$$
-	
-	is sharper but has less build-in information when you need to interface with norm constraints.
-
 - **Duality.**
-	Schatten--Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:
-	
-	$$
-	\sup_{{\|X\|}_{S_1}\le 1}\mathrm{tr}(G^{\ast}X) = {\|G\|}_{S_{\infty}}.
-	$$
-	
-	This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal--dual derivations.
+  Schatten--Hölder is exactly the mechanism behind dual norms. A canonical identity is the duality between nuclear norm and spectral norm:
+  $$
+  \sup_{\lVert X\rVert_{S_1}\le 1}\mathrm{tr}(G^{\ast}X)
+  =
+  \lVert G\rVert_{S_{\infty}}.
+  $$
+  This is the standard bridge that turns trace objectives into norm bounds in analysis of regularization and primal--dual derivations.
 
 ### 5.2 “What’s between” revisited
 
 At the end of this blog, I would like to revisit the problem "What’s Between the Schatten Hölder Inequality?" from a perspective of "information" (not those in information theory, though). Let recap the upper bound for $|\mathrm{tr}(A^*B)|$ that we've discussed:
 
 - von Neumann trace inequality provides the **spectral inner product** $\langle \sigma(A),\sigma(B)\rangle$,
-- Schatten Hölder inequality replaces it by **norm summaries** ${\|\sigma(A)\|}_{\ell_{p}} {\|\sigma(B)\|}_{\ell_{q}}$.
-
+- Schatten Hölder inequality replaces it by **norm summaries** $\lVert \sigma(A)\rVert_{\ell_{p}}\,\lVert \sigma(B)\rVert_{\ell_{q}}$.
 
 Therefore, the gap between them measures how much information you lose by compressing the spectrum into a single scalar.
 
@@ -360,7 +394,7 @@ Therefore, the gap between them measures how much information you lose by compre
 
 Here is an exercise that I leave for my dear readers (if you are patient enough to read this far):
 
-* Can you find an example of matrices $(A,B)$ such that all the three inequalities in Corollary 3.1 are strict?
+* Can you find an example of matrices $(A,B)$ such that all the three inequalities in **Corollary 3.1** are strict?
 
 ---
 ## References
