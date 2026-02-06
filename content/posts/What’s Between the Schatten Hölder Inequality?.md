@@ -227,7 +227,7 @@ $$
 holds (informally) if and only if $A$ and $B$ share a common singular vector basis. Mathematically, the condition will be: there exist unitary matrices $U\in \mathbb{U}(m)$ and $V\in \mathbb{U}(n)$ such that
 
 $$
-A = U \Sigma_A V^*,\qquad B = U \Sigma_B V^*,
+A = U \Sigma_A V^{\ast} ,\qquad B = U \Sigma_B V^{\ast},
 $$
 
 where $\Sigma_A,\Sigma_B$ are rectangular diagonal with the singular values on the diagonal in the same order. Specifically, we can choose $\tilde{\Sigma}_A = \mathrm{diag}(\sigma_1(A),\cdots,\sigma_r(A))$ and $\tilde{\Sigma}_B = \mathrm{diag}(\sigma_1(B),\cdots,\sigma_r(B))$; and $\Sigma = [\tilde{\Sigma}, \; 0]$, or $\Sigma = [\tilde{\Sigma}, \; 0]^\top$, depending on the dimension of $\mathbb{C}^{m\times n}$.
