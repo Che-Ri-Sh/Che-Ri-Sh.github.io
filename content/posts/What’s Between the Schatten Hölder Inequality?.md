@@ -58,12 +58,23 @@ Here I want to clarify that the above three are "perspectives" instead of "categ
 > $$
 
 
-> **Definition 1.1 (Schatten $p$-norm).**  
-> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of \(A\), where $q=\min\{m,n\}$. The Schatten $p$-norm (denoted as ${\|\cdot\|}_{S_p}$) is defined by  
->
-> $$
-> \|A\|_{S_p}:= \begin{cases} \Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, & 1\le p<\infty,\\ \sigma_1(A), & p=\infty.\end{cases}
-> $$
+<blockquote>
+<p><strong>Definition 1.1 (Schatten <span class="math">\(p\)</span>-norm).</strong><br>
+Let <span class="math">\(A\in\mathbb{C}^{m\times n}\)</span> and let
+<span class="math">\(\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0\)</span>
+denote the singular values of <span class="math">\(A\)</span>, where
+<span class="math">\(q=\min\lbrace m,n\rbrace\)</span>.
+The Schatten <span class="math">\(p\)</span>-norm is defined by</p>
+
+$$
+\lVert A\rVert_{S_p}:=
+\begin{cases}
+\left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p}, & 1\le p<\infty,\\
+\sigma_1(A), & p=\infty.
+\end{cases}
+$$
+</blockquote>
+
 
 There are several useful special cases of Schatten norms:
 - $p=1$: **nuclear / trace / Ky Fan norm**
