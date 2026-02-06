@@ -36,7 +36,7 @@ $|\mathrm{tr}(A^*B)|$, for matrices $A,B\in\mathbb{C}^{m\times n}$. To my knowle
 What are their connections? How to use them properly? We set out to answer these questions in this post.
 
 <figure style="text-align:center;">
-  <img src="/images/von-neumann-plaque.jpg"
+  <img src="/images/von_Neumann.jpg"
        alt="von Neumann memorial plaque"
        style="max-width:60%; height:auto; display:block; margin:0 auto;">
   <figcaption style="font-weight: normal;">
