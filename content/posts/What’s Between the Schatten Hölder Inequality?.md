@@ -255,7 +255,7 @@ Well, this case is rather simple. For $1<p<\infty$, equality in vector Hölder o
 there exists $c>0$ such that
 
 $$
-\sigma_i(A)^p = c\,\sigma_i(B)^q
+\sigma_i(A)^p = c \sigma_i(B)^q
 \quad \text{for all } i \text{ on the common support},
 $$
 
@@ -273,7 +273,7 @@ By the sandwiching in Corollary 3.1, we conclude the following simple but import
 
 > [!Corollary 4.2]
 > **Equality in Schatten Hölder.**  
-> The equality $ |\mathrm{tr}(A^*B)|=\|A\|_{S_p}\|B\|_{S_q}$ holds if and only if **both** inequalities in §4.1 (von Neumann trace inequality)
+> The equality $|\mathrm{tr}(A^{\ast}B)|=\|A\|_{S_p}\|B\|_{S_q}$ holds if and only if **both** inequalities in §4.1 (von Neumann trace inequality)
 > and §4.2 (vector Hölder inequality) are equalities, or equivalently,
 > $$
 > B = c A|A|^{p-2},
