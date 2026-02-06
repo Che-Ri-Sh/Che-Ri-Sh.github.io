@@ -18,15 +18,15 @@ $$
 \overbrace{
 \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
 \le
-\underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{\substack{=\sum_i\sigma_i(A^{\ast}B)}}
-\le
-\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+\lVert A^{\ast}B\rVert_{S_1} \le
 }^{\text{von Neumann}}
+\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+\overbrace{
 \le
-\underbrace{\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}
+\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
+}^{\text{vector Hölder }}
 }_{\text{Schatten Hölder}}.
 $$
-
 
 
 $$
