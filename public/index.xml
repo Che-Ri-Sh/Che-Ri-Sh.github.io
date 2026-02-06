@@ -6,8 +6,44 @@
     <description>Recent content on CHERISH</description>
     <generator>Hugo -- 0.155.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Feb 2026 13:13:02 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 19:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What’s Between the Schatten Hölder Inequality?</title>
+      <link>http://localhost:1313/posts/whats-between-the-schatten-h%C3%B6lder-inequality/</link>
+      <pubDate>Fri, 06 Feb 2026 19:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/whats-between-the-schatten-h%C3%B6lder-inequality/</guid>
+      <description>&lt;h2 id=&#34;another-perspective-on-the-von-neumann-trace-inequality&#34;&gt;Another perspective on the von Neumann trace inequality&lt;/h2&gt;
+&lt;p&gt;CHERISH, 2026.2.6&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;[TL;DR] In this blog, I explain the following chain of inequalities, as well as other related concepts.
+$$
+\underbrace{
+\overbrace{
+|\mathrm{tr}(A^*B)|
+;\le;
+\underbrace{|A^*B|&lt;em&gt;{S_1}}&lt;/em&gt;{=\sum_i\sigma_i(A^*B)}
+;\le;
+\sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B)
+;\le;
+|A|&lt;em&gt;{S_p}|B|&lt;/em&gt;{S_q}}&lt;em&gt;{\text{vector Hölder }}}&lt;/em&gt;{\text{Schatten Hölder}}
+.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Tighter or looser? That is the question for inequalities.&lt;/em&gt; Usually, judging whether an inequality is “good” involves a trade-off. If a bound for the inequality is &lt;strong&gt;too tight&lt;/strong&gt;, it is often too restrictive, working only under strong conditions and becoming hard to reuse in other arguments. On the other hand, if a bound is &lt;strong&gt;too loose&lt;/strong&gt;, it is often too weak, giving a correct statement but one that does not meaningfully constrain the quantity of interest. This trade-off is why people often look for something &amp;ldquo;between&amp;rdquo; the inequalities: an estimate that is &lt;strong&gt;tight enough to retain the right information&lt;/strong&gt;, while still &lt;strong&gt;flexible enough to be reusable&lt;/strong&gt; across different contexts. That is exactly the motivation behind the question in the title of this post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/posts/test/</link>
+      <pubDate>Thu, 05 Feb 2026 13:29:55 +0800</pubDate>
+      <guid>http://localhost:1313/posts/test/</guid>
+      <description>&lt;p&gt;This is a test post.&lt;/p&gt;
+&lt;p&gt;Inline math: $a^2+b^2=c^2$.&lt;/p&gt;
+&lt;p&gt;Display math:
+$$
+\int_0^1 \sin y , dy.
+$$&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hello</title>
       <link>http://localhost:1313/posts/hello/</link>

@@ -72,6 +72,24 @@
     }
 
 </script>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+
+
 </head>
 <body class="list" id="top">
     <header class="header">
@@ -121,6 +139,36 @@
     Posts
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">What’s Between the Schatten Hölder Inequality?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Another perspective on the von Neumann trace inequality CHERISH, 2026.2.6
+[TL;DR] In this blog, I explain the following chain of inequalities, as well as other related concepts. $$ \underbrace{ \overbrace{ |\mathrm{tr}(A^*B)| ;\le; \underbrace{|A^*B|{S_1}}{=\sum_i\sigma_i(A^*B)} ;\le; \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) ;\le; |A|{S_p}|B|{S_q}}{\text{vector Hölder }}}{\text{Schatten Hölder}} . $$
+Tighter or looser? That is the question for inequalities. Usually, judging whether an inequality is “good” involves a trade-off. If a bound for the inequality is too tight, it is often too restrictive, working only under strong conditions and becoming hard to reuse in other arguments. On the other hand, if a bound is too loose, it is often too weak, giving a correct statement but one that does not meaningfully constrain the quantity of interest. This trade-off is why people often look for something “between” the inequalities: an estimate that is tight enough to retain the right information, while still flexible enough to be reusable across different contexts. That is exactly the motivation behind the question in the title of this post.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-06 19:00:00 +0800 HKT'>February 6, 2026</span>&nbsp;·&nbsp;<span>11 min</span></footer>
+  <a class="entry-link" aria-label="post link to What’s Between the Schatten Hölder Inequality?" href="http://localhost:1313/posts/whats-between-the-schatten-h%C3%B6lder-inequality/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Test
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This is a test post.
+Inline math: $a^2&#43;b^2=c^2$.
+Display math: $$ \int_0^1 \sin y , dy. $$
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-05 13:29:55 +0800 HKT'>February 5, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Test" href="http://localhost:1313/posts/test/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
