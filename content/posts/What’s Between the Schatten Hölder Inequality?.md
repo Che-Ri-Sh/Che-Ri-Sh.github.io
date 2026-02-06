@@ -46,7 +46,8 @@ Defining a meaning norm for a matrix is not that trivial (at least not as trivia
 Here I want to clarify that the above three are "perspectives" instead of "categories". They can overlap (for instance, the spectral norm is both an operator norm and a Schatten norm), and they certainly do not exhaust all matrix norms of interest. Still, the motivations behind these perspectives are, in my opinion, genuinely distinct; and keeping them separate helps explain why different norms arise naturally in different settings. In this article, we mainly focus on Schatten norms (we may discuss others in future posts, though).
 
 > **Definition 1.1 (Schatten $p$-norm).**  
-> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of \(A\), where $q=\min\{m,n\}$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined by  
+> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of \(A\), where $q=\min\{m,n\}$. The Schatten $p$-norm (denoted as ${\|\cdot\|}_{S_p}$) is defined by  
+>
 > $$
 > \|A\|_{S_p}:= \begin{cases} \Big(\sum_{i=1}^q \sigma_i(A)^p\Big)^{1/p}, & 1\le p<\infty,\\ \sigma_1(A), & p=\infty.\end{cases}
 > $$
@@ -111,7 +112,7 @@ It's worthwhile to note the following two famous special cases of this inequalit
 As one of the most useful theorems in matrix analysis, the von Neumann trace inequality establishes a sharp connection between the trace inner product of two matrices and the alignment of their singular-value spectra. While most textbooks state this theorem for square matrix, the results are correct for rectangular ones as well.
 
 > **Theorem 2.1 (von Neumann trace inequality).**  
-> For $A,B\in\mathbb{C}^{m\times n}$ and $r=\min\{m,n\}$,
+> For $A,B\in\mathbb{C}^{m\times n}$ and $r=\min \\{m,n\\}$,
 >
 > $$
 > |\mathrm{tr}(A^*B)| \le \sum_{i=1}^r \sigma_i(A)\sigma_i(B). \tag{VN}
