@@ -41,6 +41,16 @@ What are their connections? How to use them properly? We set out to answer these
     style="max-width:60%; margin: 0 auto; text-align: center;"
 >}}
 
+<figure style="text-align:center;">
+  <img src="/images/von_Neumann.jpg"
+       alt="von Neumann memorial plaque"
+       style="max-width:60%; height:auto; display:block; margin:0 auto;">
+  <figcaption>
+    Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024.
+  </figcaption>
+</figure>
+
+
 ---
 
 Here are some notations we will adopt in this blog. Let matrices $A,B \in \mathbb{C}^{m \times n}$. By default, we assume that the singular values (denoted by $\sigma$) of those matrices are listed in descending order, i.e. 
