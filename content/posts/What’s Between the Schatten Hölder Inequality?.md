@@ -240,9 +240,7 @@ Another related theorem can be found in Theorem (7.4.10) of the book *Matrix Ana
 > **Exact spectral pairing under positivity assumptions.**  
 > Let $A, B \in \mathbb{C}^{m\times n}$, and denote $r := \min\{m,n\}$. Let $\sigma_1(A)\ge \cdots \ge \sigma_r(A)$ and $\sigma_1(B)\ge \cdots \ge \sigma_r(B)$ be the singular values of $A$ and $B$, respectively.  If both products $A^*B$ and $B^*A$ are positive semidefinite, then there exists a permutation $\tau$ of $\{1,\dots,r\}$ such that
 > $$
-> \mathrm{tr}(A^*B) \;=\; \mathrm{tr}(B^*A)
-> \;=\;
-> \sum_{i=1}^r \sigma_i(A)\,\sigma_{\tau(i)}(B).
+> \mathrm{tr}(A^*B) = \mathrm{tr}(B^*A) = \sum_{i=1}^r \sigma_i(A) \sigma_{\tau(i)}(B).
 > $$
 
 ### 4.2. Equality in the vector Hölder step: **singular value proportionality**
@@ -250,7 +248,7 @@ Another related theorem can be found in Theorem (7.4.10) of the book *Matrix Ana
 Now consider the second inequality:
 
 $$
-\sum_{i=1}^r \sigma_i(A)\sigma_i(B)=\langle \sigma(A),\sigma(B)\rangle\le \|A\|_{S_p}\|B\|_{S_q}.
+\sum_{i=1}^{r} \sigma_{i}(A)\sigma_{i}(B)=\langle \sigma(A),\sigma(B) \rangle \le \|A\|_{S_p} \|B\|_{S_q}.
 $$
 
 Well, this case is rather simple. For $1<p<\infty$, equality in vector Hölder occurs exactly when the sequences are proportional in the Hölder sense. Mathematically, the equality condition will be:
