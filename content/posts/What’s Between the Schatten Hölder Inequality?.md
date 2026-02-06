@@ -38,7 +38,7 @@ What are their connections? How to use them properly? We set out to answer these
 {{< figure
     src="/images/von_Neumann.jpg"
     caption="Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024."
-    width="600"
+    style="max-width:400px; margin: 0 auto; text-align: center;"
 >}}
 
 ---
