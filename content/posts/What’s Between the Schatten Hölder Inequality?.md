@@ -13,7 +13,7 @@ CHERISH, 2026.2.6
 \[TL;DR\] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 
 $$
-\underbrace{\overbrace{ |\mathrm{tr}(A^*B)| \le \underbrace{\|A^*B\|_{S_1}}_{=\sum_i\sigma_i(A^*B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
+\underbrace{\overbrace{ |\mathrm{tr}(A^{\ast}B)| \le \underbrace{\|A^{\ast}B\|_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \|A\|_{S_p}\|B\|_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
 $$
 
 ---
