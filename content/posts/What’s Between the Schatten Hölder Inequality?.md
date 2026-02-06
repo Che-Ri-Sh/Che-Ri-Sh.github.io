@@ -43,7 +43,20 @@ Defining a meaning norm for a matrix is not that trivial (at least not as trivia
 * vectorizing the matrix, which leads to **entry-wise norm**,
 * inducing from vector norms, which leads to **operator norms**,
 * applying vector norms to the spectra (singular values vectors), which leads to **Schatten norms**.
+
 Here I want to clarify that the above three are "perspectives" instead of "categories". They can overlap (for instance, the spectral norm is both an operator norm and a Schatten norm), and they certainly do not exhaust all matrix norms of interest. Still, the motivations behind these perspectives are, in my opinion, genuinely distinct; and keeping them separate helps explain why different norms arise naturally in different settings. In this article, we mainly focus on Schatten norms (we may discuss others in future posts, though).
+
+> **Definition 1.1 (Schatten $p$-norm).**  
+> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\|\cdot\|_{S_p}$) is defined by  
+>
+> $$
+> \lVert A\rVert_{S_p}:=
+> \begin{cases}
+> \left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p}, & 1\le p<\infty,\\
+> \sigma_1(A), & p=\infty.
+> \end{cases}
+> $$
+
 
 > **Definition 1.1 (Schatten $p$-norm).**  
 > Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of \(A\), where $q=\min\{m,n\}$. The Schatten $p$-norm (denoted as ${\|\cdot\|}_{S_p}$) is defined by  
