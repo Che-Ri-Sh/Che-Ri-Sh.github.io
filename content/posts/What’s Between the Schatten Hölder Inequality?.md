@@ -12,6 +12,19 @@ CHERISH, 2026.2.6
 
 \[TL;DR\] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 
+$$
+\overbrace{
+\bigl|\mathrm{tr}(A^{\ast}B)\bigr|
+\le
+\lVert A^{\ast}B\rVert_{S_1} \le
+}^{\text{von Neumann}}
+\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+\overbrace{
+\le
+\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
+}^{\text{vector Hölder }}
+$$
+
 
 $$
 \underbrace{
