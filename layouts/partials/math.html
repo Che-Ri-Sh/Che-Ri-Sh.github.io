@@ -13,3 +13,20 @@ window.MathJax = {
 </script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<script>
+(function () {
+  function typeset() {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise();
+    }
+  }
+
+  // 首次加载
+  document.addEventListener("DOMContentLoaded", typeset);
+
+  // 处理浏览器 back/forward 缓存、以及某些主题的“非完全刷新”
+  window.addEventListener("pageshow", typeset);
+  window.addEventListener("load", typeset);
+})();
+</script>
