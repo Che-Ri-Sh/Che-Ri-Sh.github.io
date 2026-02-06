@@ -35,6 +35,11 @@ $|\mathrm{tr}(A^*B)|$, for matrices $A,B\in\mathbb{C}^{m\times n}$. To my knowle
 
 What are their connections? How to use them properly? We set out to answer these questions in this post.
 
+{{< figure
+    src="/images/von_Neumann.jpg"
+    caption="Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024."
+>}}
+
 ---
 
 Here are some notations we will adopt in this blog. Let matrices $A,B \in \mathbb{C}^{m \times n}$. By default, we assume that the singular values (denoted by $\sigma$) of those matrices are listed in descending order, i.e. 
