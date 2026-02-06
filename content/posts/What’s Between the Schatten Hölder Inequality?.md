@@ -50,7 +50,7 @@ Defining a meaning norm for a matrix is not that trivial (at least not as trivia
 Here I want to clarify that the above three are "perspectives" instead of "categories". They can overlap (for instance, the spectral norm is both an operator norm and a Schatten norm), and they certainly do not exhaust all matrix norms of interest. Still, the motivations behind these perspectives are, in my opinion, genuinely distinct; and keeping them separate helps explain why different norms arise naturally in different settings. In this article, we mainly focus on Schatten norms (we may discuss others in future posts, though).
 
 > **Definition 1.1 (Schatten $p$-norm).**  
-> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\lVert \cdot\rVet_{S_p}$) is defined as follows: When $1\le p<\infty$:
+> Let $A\in\mathbb{C}^{m\times n}$ and let $\sigma_1(A)\ge \cdots \ge \sigma_q(A)\ge 0$ denote the singular values of $A$, where $q=\min\lbrace m,n\rbrace$. The Schatten $p$-norm (denoted as $\lVert \cdot\rVert_{S_p}$) is defined as follows: When $1\le p<\infty$:
 >
 > $$
 > \lVert A\rVert_{S_p}:=\left(\sum_{i=1}^q \sigma_i(A)^p\right)^{1/p},
