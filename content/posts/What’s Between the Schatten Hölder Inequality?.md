@@ -15,10 +15,10 @@ $$
 \le
 \lVert A^{\ast}B\rVert_{S_1} \le
 }^{\text{von Neumann}}
-\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+\sum_{i=1}^r \sigma_i(A) \sigma_i(B)
 \overbrace{
 \le
-\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
+\lVert A\rVert_{S_p} \lVert B\rVert_{S_q}
 }^{\text{vector Hölder }}
 }_{\text{Schatten Hölder}}.
 $$
@@ -38,7 +38,7 @@ What are their connections? How to use them properly? We set out to answer these
 {{< figure
     src="/images/von_Neumann.jpg"
     caption="Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024."
-    style="max-width:400px; margin: 0 auto; text-align: center;"
+    style="max-width:60%; margin: 0 auto; text-align: center;"
 >}}
 
 ---
