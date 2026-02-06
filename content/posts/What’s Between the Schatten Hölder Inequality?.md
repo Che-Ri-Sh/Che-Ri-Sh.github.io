@@ -70,6 +70,26 @@ There are several useful special cases of Schatten norms:
   $$
   \|A\|_{S_\infty} = \|A\|_2 = \sigma_1 (A).
   $$
+  
+  
+There are several useful special cases of Schatten norms:
+- $p=1$: **nuclear / trace / Ky Fan norm**
+
+  $$
+  \\|A\\|_{S_1} = \\|A\\|_{*} = \sum_{i=1}^q \sigma_i(A).
+  $$
+  
+- $p=2$: **Frobenius norm**
+
+  $$
+  \\|A\\|_{S_2} = \\|A\\|_F = \sqrt{\mathrm{tr}(A^*A)}.
+  $$
+  
+- $p=\infty$: **spectral norm**
+
+  $$
+  \\|A\\|_{S_\infty} = \\|A\\|_2 = \sigma_1 (A).
+  $$
 ---
 ### The Schatten Hölder inequality
 
@@ -131,14 +151,13 @@ As pointed out in the book *Topics in Matrix Analysis* (where, unfortunately, th
 > **Lemma (Eigenvalues vs singular values).**  
 > Let $A \in M_n$ have eigenvalues $\{\lambda_1(A),\dots,\lambda_n(A)\}$ ordered such that $|\lambda_1(A)| \ge \cdots \ge |\lambda_n(A)|$, and singular values $\sigma_1(A) \ge \cdots \ge \sigma_n(A) \ge 0$.  Then, for every $k=1,\dots,n$,
 > $$
-> \sum_{i=1}^k |\lambda_i(A)| \;\le\; \sum_{i=1}^k \sigma_i(A).
+> \sum_{i=1}^k |\lambda_i(A)| \le \sum_{i=1}^k \sigma_i(A).
 > $$
 >
 > In particular,
 >
-
 > $$
-> |\mathrm{tr}(A)| \;\le\; \sum_{i=1}^n \sigma_i(A).
+> |\mathrm{tr}(A)| \le \sum_{i=1}^n \sigma_i(A).
 > $$
 
 
