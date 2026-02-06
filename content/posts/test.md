@@ -21,3 +21,9 @@ $$
  $$
 \underbrace{\overbrace{ \bigl|\mathrm{tr}(A^{\ast}B)\bigr| \le \underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)} \le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}\underbrace{\sigma_i(B) \le  \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
 $$
+
+
+
+$$
+\underbrace{y=x^2}_{Good}
+$$
