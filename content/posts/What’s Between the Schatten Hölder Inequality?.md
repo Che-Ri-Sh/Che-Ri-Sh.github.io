@@ -13,20 +13,6 @@ CHERISH, 2026.2.6
 \[TL;DR\] In this blog, I explain the following chain of inequalities, as well as other related concepts.
 
 $$
-\overbrace{
-\bigl|\mathrm{tr}(A^{\ast}B)\bigr|
-\le
-\lVert A^{\ast}B\rVert_{S_1} \le
-}^{\text{von Neumann}}
-\sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
-\overbrace{
-\le
-\lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
-}^{\text{vector Hölder }}
-$$
-
-
-$$
 \underbrace{
 \overbrace{
 \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
@@ -39,14 +25,6 @@ $$
 \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
 }^{\text{vector Hölder }}
 }_{\text{Schatten Hölder}}.
-$$
-
-
-$$
-\underbrace{\overbrace{ \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
-\le \underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)}
-\le \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}
-\underbrace{\sigma_i(B) \le  \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}}_{\text{Schatten Hölder}}.
 $$
 
 ---
@@ -232,14 +210,14 @@ for $\frac{1}{p}+\frac{1}{q}=1$, we have the following important inequality chai
 > \overbrace{
 > \bigl|\mathrm{tr}(A^{\ast}B)\bigr|
 > \le
-> \underbrace{\lVert A^{\ast}B\rVert_{S_1}}_{=\sum_i\sigma_i(A^{\ast}B)}
+> \lVert A^{\ast}B\rVert_{S_1} \le
+> }^{\text{von Neumann}}
+> \sum_{i=1}^r \sigma_i(A)\,\sigma_i(B)
+> \overbrace{
 > \le
-> \sum_{i=1}^r \sigma_i(A)}^{\text{von Neumann}}
-> \underbrace{\sigma_i(B)
-> \le
-> \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}}_{\text{vector Hölder }}
+> \lVert A\rVert_{S_p}\,\lVert B\rVert_{S_q}
+> }^{\text{vector Hölder }}
 > }_{\text{Schatten Hölder}}.
-> \tag{Chain}
 > $$
 
 I believe the inequalities in **Corollary 3.1** is enough to answer the questions in the title of this blog, i.e. **What’s Between the Schatten Hölder Inequality?**  However, to better understand the intrinsic properties of these inequalities, it is natural to go one step further: **when is the inequality strict, and when do we have equality?**
