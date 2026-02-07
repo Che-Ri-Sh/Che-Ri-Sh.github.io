@@ -14,10 +14,23 @@ Once enjoyed building things in Minecraft (but getting lazier these days).
 
 Drawn to stories of "grand history told through small perspectives", including but not limited to:
 - Books, like *The Remains of the Day*, by Kazuo Ishiguro
-- Movies, like *The Grand Budapest Hotel*, by Wes Anderson
+- Buildings, like Hagia Sophia
 - Games, like Assassin's Creed
+- Movies, like *The Grand Budapest Hotel*, by Wes Anderson
+- Paintings, like *The Fighting Téméraire*, by J. M. W. Turner; *Greifswald in moonlight*, by Caspar David Friedrich
+
 
 {{< figure
     src="/images/MC.jpg"
-    caption="Sunset at the Hagia Sophia in Minecraft, recreated in Minecraft.."
+    caption="Sunset at the Hagia Sophia in Minecraft, recreated in Minecraft."
+>}}
+
+{{< figure
+    src="/images/Turner.jpg"
+    caption="The Fighting Téméraire tugged to her last Berth to be broken, by J. M. W. Turner, 1839."
+>}}
+
+{{< figure
+    src="/images/greifswald.jpg"
+    caption="Greifswald in moonlight, by Caspar David Friedrich, 1817."
 >}}

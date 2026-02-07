@@ -40,7 +40,7 @@ What are their connections? How to use them properly? We set out to answer these
        alt="von Neumann memorial plaque"
        style="max-width:60%; height:auto; display:block; margin:0 auto;">
   <figcaption style="font-weight: normal;">
-    Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a solo trip to Budapest in 2024.
+    Memorial plaque marking the birthplace of John von Neumann (1903–1957), photographed by the author during a trip to Budapest in 2024.
   </figcaption>
 </figure>
 
