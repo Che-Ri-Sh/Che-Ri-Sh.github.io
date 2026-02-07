@@ -27,10 +27,10 @@ Drawn to stories of "grand history told through small perspectives", including b
 
 {{< figure
     src="/images/Turner.jpg"
-    caption="The Fighting Téméraire tugged to her last Berth to be broken, by J. M. W. Turner, 1839."
+    caption="The Fighting Téméraire tugged to her last Berth to be broken, by J. M. W. Turner, 1839 (from Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Turner,_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg)"
 >}}
 
 {{< figure
     src="/images/greifswald.jpg"
-    caption="Greifswald in moonlight, by Caspar David Friedrich, 1817."
+    caption="Greifswald in moonlight, by Caspar David Friedrich, 1817 (from Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Greifswald_in_Moonlight_-_NG.M.00387_-_National_Museum_of_Art,_Architecture_and_Design.jpg)"
 >}}
