@@ -4,7 +4,9 @@ draft: false
 title: 'Equi-Integrability as a Special Case of Equi-Continuity'
 author: 'CHERISH'
 ---
-*Originally written on Nov 1, 2023, this post came from some thoughts that arose during my undergraduate study of real analysis.*
+
+ > *Originally written on Nov 1, 2023, this post came from some thoughts that arose during my undergraduate study of real analysis.*
+
 ---
 
 In real analysis, **equi-integrability** is usually introduced as a technical condition on a family of integrable functions. At first sight, it looks quite different from the notion of **equi-continuity** in metric spaces.
@@ -94,7 +96,7 @@ The next fact is standard.
 > $$
 > d(A,C)\le d(A,B)+d(B,C).
 > $$
-> $\qed$
+> $\square$
 
 Now fix a measurable set $E$ of finite measure, and consider the subspace
 $$
@@ -186,20 +188,26 @@ $$
 $$
 
 Now take any measurable set $A\subseteq E$ such that $m(A)<\delta$, and define
+
 $$
 \tilde{S}:=E\setminus A.
 $$
+
 Since $\tilde{S}\subseteq E$, we have
+
 $$
 d(\tilde{S},E)=m(\tilde{S}\triangle E)=m(E\setminus \tilde{S})=m(A)<\delta.
 $$
+
 Therefore,
+
 $$
 \int_A \lvert f\rvert
 =
 \int_{E\setminus \tilde{S}}\lvert f\rvert
 <\epsilon.
 $$
+
 This is exactly the definition of equi-integrability.
 
 ---
@@ -214,14 +222,19 @@ m(A)<\delta
 $$
 
 Now let $S\in\mathcal{M}_E$ satisfy $d(S,E)<\delta$. Because $S\subseteq E$,
+
 $$
 d(S,E)=m(S\triangle E)=m(E\setminus S).
 $$
+
 So $m(E\setminus S)<\delta$, and by equi-integrability,
+
 $$
 \int_{E\setminus S}\lvert f\rvert<\epsilon.
 $$
+
 Hence
+
 $$
 \begin{aligned}
 \lvert \Phi_f(E)-\Phi_f(S)\rvert
@@ -232,9 +245,10 @@ $$
 &<\epsilon.
 \end{aligned}
 $$
+
 Therefore $\mathbf{\Phi}_{\mathcal{F}}$ is equi-continuous at $E$.
 
-This completes the proof. $\qed$
+This completes the proof. $\square$
 
 ---
 ## Final remark
