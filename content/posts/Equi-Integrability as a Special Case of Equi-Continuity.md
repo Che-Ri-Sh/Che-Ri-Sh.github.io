@@ -111,7 +111,7 @@ This is simply the collection of measurable subsets of $E$, equipped with the sa
 Now let $f$ be an integrable function on $E$. Instead of thinking of $\int_S \lvert f\rvert$ merely as “an integral over a subset”, we package it into a functional:
 
 $$
-{\Phi}_f : {\mathcal{M}}_{E} \to {\mathbb{R}}_{\ge 0}
+{\Phi}_{f} : {\mathcal{M}}_{E} \rightarrow {\mathbb{R}}_{\ge 0}
 $$
 
 $$
