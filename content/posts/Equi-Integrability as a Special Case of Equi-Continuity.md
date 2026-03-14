@@ -109,6 +109,7 @@ This is simply the collection of measurable subsets of $E$, equipped with the sa
 ## Integration as a functional on sets
 
 Now let $f$ be an integrable function on $E$. Instead of thinking of $\int_S \lvert f\rvert$ merely as “an integral over a subset”, we package it into a functional:
+
 $$
 \Phi_f:\mathcal{M}_E\to \mathbb{R}_{\ge 0},
 \qquad
@@ -175,16 +176,9 @@ d(S,E)<\delta
 $$
 
 Unpacking the definition of $\Phi_f$, we get
+
 $$
-\begin{aligned}
-\lvert \Phi_f(E)-\Phi_f(S)\rvert < \epsilon
-&\iff
-\left\lvert \int_E \lvert f\rvert - \int_S \lvert f\rvert \right\rvert < \epsilon \\
-&\iff
-\left\lvert \int_E \lvert f\rvert (\chi_E-\chi_S)\right\rvert < \epsilon \\
-&\iff
-\int_{E\setminus S}\lvert f\rvert < \epsilon.
-\end{aligned}
+\lvert \Phi_f(E)-\Phi_f(S)\rvert < \epsilon \;\iff\; \left\lvert \int_E \lvert f\rvert - \int_S \lvert f\rvert \right\rvert < \epsilon \;\iff\; \left\lvert \int_E \lvert f\rvert (\chi_E-\chi_S)\right\rvert < \epsilon \;\iff\; \int_{E\setminus S}\lvert f\rvert < \epsilon.
 $$
 
 Now take any measurable set $A\subseteq E$ such that $m(A)<\delta$, and define
@@ -202,10 +196,7 @@ $$
 Therefore,
 
 $$
-\int_A \lvert f\rvert
-=
-\int_{E\setminus \tilde{S}}\lvert f\rvert
-<\epsilon.
+\int_A \lvert f\rvert = \int_{E\setminus \tilde{S}}\lvert f\rvert < \epsilon.
 $$
 
 This is exactly the definition of equi-integrability.
@@ -236,14 +227,12 @@ $$
 Hence
 
 $$
-\begin{aligned}
 \lvert \Phi_f(E)-\Phi_f(S)\rvert
-&=
-\left\lvert \int_E \lvert f\rvert-\int_S \lvert f\rvert \right\rvert \\
-&=
-\int_{E\setminus S}\lvert f\rvert \\
-&<\epsilon.
-\end{aligned}
+=
+\left\lvert \int_E \lvert f\rvert-\int_S \lvert f\rvert \right\rvert
+=
+\int_{E\setminus S}\lvert f\rvert
+<\epsilon.
 $$
 
 Therefore $\mathbf{\Phi}_{\mathcal{F}}$ is equi-continuous at $E$.
