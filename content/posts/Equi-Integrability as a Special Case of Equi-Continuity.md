@@ -111,9 +111,7 @@ This is simply the collection of measurable subsets of $E$, equipped with the sa
 Now let $f$ be an integrable function on $E$. Instead of thinking of $\int_S \lvert f\rvert$ merely as “an integral over a subset”, we package it into a functional:
 
 $$
-\Phi_f:\mathcal{M}_E\to \mathbb{R}_{\ge 0},
-\qquad
-\Phi_f(S):=\int_S \lvert f\rvert.
+\Phi_f:\mathcal{M}_E\to \mathbb{R}_{\ge 0}, \quad \Phi_f(S):=\int_S \lvert f\rvert.
 $$
 
 This is well-defined with respect to our identification of sets modulo null sets.
@@ -227,12 +225,7 @@ $$
 Hence
 
 $$
-\lvert \Phi_f(E)-\Phi_f(S)\rvert
-=
-\left\lvert \int_E \lvert f\rvert-\int_S \lvert f\rvert \right\rvert
-=
-\int_{E\setminus S}\lvert f\rvert
-<\epsilon.
+\lvert \Phi_f(E)-\Phi_f(S)\rvert = \left\lvert \int_E \lvert f\rvert-\int_S \lvert f\rvert \right\rvert = \int_{E\setminus S}\lvert f\rvert <\epsilon
 $$
 
 Therefore $\mathbf{\Phi}_{\mathcal{F}}$ is equi-continuous at $E$.
