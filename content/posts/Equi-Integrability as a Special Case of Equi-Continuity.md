@@ -1,15 +1,10 @@
-
 ---
-title: "Equi-Integrability as a Special Case of Equi-Continuity"
-date: 2023-11-01
-author: "Xu Chenrui"
+date: '2026-03-14T17:00:00+08:00'
 draft: false
-summary: "A short note explaining how equi-integrability can be viewed as equi-continuity of a family of integration functionals on a metric space of measurable sets."
-tags: ["Real Analysis", "Measure Theory", "Equi-Integrability", "Equi-Continuity"]
-categories: ["Mathematics"]
-math: true
-showToc: true
-TocOpen: true
+title: 'Equi-Integrability as a Special Case of Equi-Continuity'
+author: 'CHERISH'
+---
+*Originally written on Nov 1, 2023, this post came from some thoughts that arose during my undergraduate study of real analysis.*
 ---
 
 In real analysis, **equi-integrability** is usually introduced as a technical condition on a family of integrable functions. At first sight, it looks quite different from the notion of **equi-continuity** in metric spaces.
@@ -242,33 +237,13 @@ Therefore $\mathbf{\Phi}_{\mathcal{F}}$ is equi-continuous at $E$.
 This completes the proof. $\qed$
 
 ---
-
-## Why this viewpoint is useful
-
-The result is elementary, but the perspective is conceptually pleasing.
-
-Usually, equi-integrability is presented as a condition that controls how much mass a family of functions can concentrate on sets of small measure. From that point of view, it is a property of functions.
-
-What the argument above shows is that we may equally well think of it as a **uniform continuity statement**:
-
-- the “points” are measurable subsets of $E$;
-- the distance between two such points is the measure of their symmetric difference;
-- the “functions” are the integration functionals
-  $$
-  \Phi_f(S)=\int_S \lvert f\rvert;
-  $$
-- and equi-integrability is exactly equi-continuity of this family at the point $E$.
-
-So the analogy with ordinary equi-continuity is not merely formal. It is literally true once the right metric space is introduced.
-
----
-
 ## Final remark
 
-This note only uses a very simple metric and a very simple functional, but it illustrates a broader principle that appears often in analysis:
+Whether this observation is actually useful, I am honestly not sure. It may simply be a harmless little reinterpretation, worth reading with a smile rather than with too much seriousness.
 
-> a notion that initially looks measure-theoretic can often be reinterpreted as a continuity property once the correct ambient space is identified.
+---
+## References
 
-Here, equi-integrability is one such example.
+1. Royden, H. L. (1988). Real analysis (No. 6). Krishna Prakashan Media.
 
-If you like this perspective, a natural next question is whether other compactness-related notions in measure theory can also be rephrased in a similar geometric or topological language.
+
