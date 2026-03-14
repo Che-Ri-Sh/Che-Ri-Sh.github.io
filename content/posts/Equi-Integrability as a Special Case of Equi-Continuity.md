@@ -110,9 +110,13 @@ This is simply the collection of measurable subsets of $E$, equipped with the sa
 
 Now let $f$ be an integrable function on $E$. Instead of thinking of $\int_S \lvert f\rvert$ merely as “an integral over a subset”, we package it into a functional:
 
-${\Phi}_{f} $ : $ {\mathcal{M}}_{E} \rightarrow {\mathbb{R}}$
+<div>
+$$
+{\Phi}_{f} : {\mathcal{M}}_{E} \to \mathbb{R}_{\ge 0}
+$$
+</div>
 
-$\Phi_f(S):=\int_S \lvert f\rvert$
+$$\Phi_f(S):=\int_S \lvert f\rvert$$
 
 This is well-defined with respect to our identification of sets modulo null sets.
 
