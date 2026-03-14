@@ -176,7 +176,7 @@ $$
 Unpacking the definition of $\Phi_f$, we get
 
 $$
-\lvert \Phi_f(E)-\Phi_f(S)\rvert < \epsilon \;\iff\; \left\lvert \int_E \lvert f\rvert - \int_S \lvert f\rvert \right\rvert < \epsilon \;\iff\; \left\lvert \int_E \lvert f\rvert (\chi_E-\chi_S)\right\rvert < \epsilon \;\iff\; \int_{E\setminus S}\lvert f\rvert < \epsilon.
+\lvert \Phi_f(E)-\Phi_f(S)\rvert < \epsilon \ \iff \ \left\lvert \int_E \lvert f\rvert - \int_S \lvert f\rvert \right\rvert < \epsilon \ \iff \ \left\lvert \int_E \lvert f\rvert (\chi_E-\chi_S)\right\rvert < \epsilon \ \iff \ \int_{E\setminus S}\lvert f\rvert < \epsilon.
 $$
 
 Now take any measurable set $A\subseteq E$ such that $m(A)<\delta$, and define
