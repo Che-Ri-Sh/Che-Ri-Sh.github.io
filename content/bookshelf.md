@@ -1,10 +1,10 @@
 ---
 title: "Bookshelf"
-date: 2026-06-17
 draft: false
 ---
 
-> 题记占位：这里可以放一句关于阅读、记忆或时间的短句。
+> The past is never dead. It’s not even past. All of us labor in webs spun long before we were born, webs of heredity and environment, of desire and consequence, of history and eternity.
+> -- William Faulkner, *Requiem for a Nun*
 
 ---
 
