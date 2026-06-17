@@ -4,7 +4,11 @@ date: 2026-06-17
 draft: false
 ---
 
-> Quote placeholder: A short sentence about travel, memory, or cities can go here.
+> DeBí TiRAR MáS FOToS de cuando te tuve
+>
+> Debí darte más besos y abrazos las veces que pude
+>
+> <div align="right">— Bad Bunny</div>
 
 <div class="travel-grid">
   <a class="travel-block" href="/travel/hong-kong/" style="--travel-bg: url('/travel_img/HK_bg.jpg');">

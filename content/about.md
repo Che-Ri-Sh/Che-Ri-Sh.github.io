@@ -3,13 +3,15 @@ title: "CHERISH"
 draft: false
 ---
 
-PhDing, Hong Kong.
+PhDing at the Chinese University of Hong Kong.
+
+Messing around with some optimization and machine learning stuff lately.
 
 Sharing occasional thoughts on applied mathematics, statistics, and related topics.
 
 Once enjoyed building things in Minecraft (but getting lazier these days).
 
-Drawn to stories of "grand history told through small perspectives", including but not limited to:
+Currently drawn to stories of "grand history told through small perspectives", including but not limited to:
 - Books, like *The Remains of the Day*, by Kazuo Ishiguro
 - Buildings, like Hagia Sophia
 - Games, like Assassin's Creed
