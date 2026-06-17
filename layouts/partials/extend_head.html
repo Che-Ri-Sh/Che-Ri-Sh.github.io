@@ -17,8 +17,6 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   background-color: var(--entry);
-  background-position: center;
-  background-size: cover;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   flex-direction: column;
   justify-content: flex-end;
@@ -28,8 +26,19 @@
 
 .travel-block::before {
   position: absolute;
+  inset: -6px;
+  background-image: var(--travel-bg);
+  background-position: center;
+  background-size: cover;
+  content: "";
+  filter: blur(1.5px);
+  transform: scale(1.04);
+}
+
+.travel-block::after {
+  position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.58));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.62));
   content: "";
 }
 
@@ -40,6 +49,7 @@
 
 .travel-block-title {
   position: relative;
+  z-index: 1;
   color: #fff;
   font-size: 1.15rem;
   font-weight: 700;
@@ -48,6 +58,7 @@
 
 .travel-block-meta {
   position: relative;
+  z-index: 1;
   margin-top: 6px;
   color: rgba(255, 255, 255, 0.86);
   font-size: 0.9rem;
