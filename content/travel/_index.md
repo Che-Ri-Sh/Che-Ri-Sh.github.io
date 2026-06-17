@@ -18,6 +18,18 @@ draft: false
     <span class="travel-block-title">Rio de Janeiro</span>
     <span class="travel-block-meta">Apr 2026</span>
   </a>
+  <a class="travel-block" href="/travel/himeji/" style="--travel-bg: url('/travel_img/姬路_bg.jpg');">
+    <span class="travel-block-title">姬路</span>
+    <span class="travel-block-meta">Mar 2025</span>
+  </a>
+  <a class="travel-block" href="/travel/nara/" style="--travel-bg: url('/travel_img/奈良_bg.jpg');">
+    <span class="travel-block-title">奈良</span>
+    <span class="travel-block-meta">Mar 2025</span>
+  </a>
+  <a class="travel-block" href="/travel/kyoto/" style="--travel-bg: url('/travel_img/京都_bg.jpg');">
+    <span class="travel-block-title">京都</span>
+    <span class="travel-block-meta">Mar 2025</span>
+  </a>
   <a class="travel-block" href="/travel/barcelona/" style="--travel-bg: url('/travel_img/Barcelona_bg.jpg');">
     <span class="travel-block-title">Barcelona</span>
     <span class="travel-block-meta">Aug 2024</span>
@@ -44,6 +56,10 @@ draft: false
   </a>
   <a class="travel-block" href="/travel/salzburg/" style="--travel-bg: url('/travel_img/Salzburg_bg.jpg');">
     <span class="travel-block-title">Salzburg</span>
+    <span class="travel-block-meta">Apr 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/regensburg/" style="--travel-bg: url('/travel_img/Regensburg_bg.jpg');">
+    <span class="travel-block-title">Regensburg</span>
     <span class="travel-block-meta">Apr 2024</span>
   </a>
   <a class="travel-block" href="/travel/munich/" style="--travel-bg: url('/travel_img/Munich_bg.jpg');">
