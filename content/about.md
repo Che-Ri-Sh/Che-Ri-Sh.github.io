@@ -1,10 +1,7 @@
 ---
-title: "About"
-date: 2026-02-05
+title: "CHERISH"
 draft: false
 ---
-
-Cherish.
 
 PhDing, Hong Kong.
 
