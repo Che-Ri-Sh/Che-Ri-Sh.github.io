@@ -39,96 +39,17 @@
   font-size: 0.9rem;
 }
 
-.bookshelf-page {
-  margin-top: 12px;
-}
-
-.bookshelf-epigraph {
-  margin: 0 0 28px;
-  padding: 14px 18px;
-  border-inline-start: 3px solid var(--tertiary);
-  color: var(--secondary);
-  font-style: italic;
-}
-
-.book-entry {
-  margin: 24px 0;
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--entry);
-}
-
-.book-entry-header {
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.book-entry-header h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.book-entry-header time {
-  flex: 0 0 auto;
+.book-date {
+  float: right;
   color: var(--secondary);
   font-size: 0.9rem;
-}
-
-.book-entry-section + .book-entry-section {
-  margin-top: 18px;
-}
-
-.book-entry-section h3 {
-  margin: 0 0 8px;
-  color: var(--secondary);
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.book-quote-list,
-.book-thought-list {
-  margin: 0;
-  padding-inline-start: 0;
-  list-style: none;
-  counter-reset: book-item;
-}
-
-.book-quote-list li,
-.book-thought-list li {
-  counter-increment: book-item;
-  position: relative;
-  margin: 8px 0;
-  padding-inline-start: 42px;
-}
-
-.book-quote-list li::before,
-.book-thought-list li::before {
-  position: absolute;
-  inset-inline-start: 0;
-  color: var(--secondary);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.book-quote-list li::before {
-  content: "Q" counter(book-item);
-}
-
-.book-thought-list li::before {
-  content: "T" counter(book-item);
+  font-weight: 400;
 }
 
 @media (max-width: 520px) {
-  .book-entry-header {
+  .book-date {
     display: block;
-  }
-
-  .book-entry-header time {
-    display: block;
+    float: none;
     margin-top: 6px;
   }
 }
