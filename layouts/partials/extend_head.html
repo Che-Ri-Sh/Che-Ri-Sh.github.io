@@ -1,1 +1,41 @@
 {{ partial "math.html" . }}
+
+<style>
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.travel-block {
+  display: flex;
+  min-height: 132px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--entry);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.travel-block:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.travel-block-title {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.travel-block-meta {
+  margin-top: 6px;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+</style>

@@ -21,6 +21,12 @@ menu:
     - name: Posts
       url: /posts/
       weight: 10
+    - name: Bookshelf
+      url: /bookshelf/
+      weight: 20
+    - name: Travel
+      url: /travel/
+      weight: 30
     - name: About
       url: /about/
-      weight: 20
+      weight: 40
