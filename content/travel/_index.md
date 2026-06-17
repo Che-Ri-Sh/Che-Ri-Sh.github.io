@@ -5,17 +5,39 @@ draft: false
 ---
 
 <div class="travel-grid">
-  <a class="travel-block" href="/travel/hong-kong/">
+  <a class="travel-block" href="/travel/hong-kong/" style="background-image: url('/travel_img/hong-kong.jpg');">
     <span class="travel-block-title">Hong Kong</span>
-    <span class="travel-block-meta">Photo collection placeholder</span>
   </a>
-  <a class="travel-block" href="/travel/istanbul/">
-    <span class="travel-block-title">Istanbul</span>
-    <span class="travel-block-meta">Photo collection placeholder</span>
+  <a class="travel-block" href="/travel/munich/" style="background-image: url('/travel_img/munich.jpg');">
+    <span class="travel-block-title">Munich</span>
+    <span class="travel-block-meta">Apr 2024</span>
   </a>
-  <a class="travel-block" href="/travel/paris/">
+  <a class="travel-block" href="/travel/salzburg/" style="background-image: url('/travel_img/salzburg.jpg');">
+    <span class="travel-block-title">Salzburg</span>
+    <span class="travel-block-meta">Apr 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/mannheim/" style="background-image: url('/travel_img/mannheim.jpg');">
+    <span class="travel-block-title">Mannheim</span>
+    <span class="travel-block-meta">May 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/paris/" style="background-image: url('/travel_img/paris.jpg');">
     <span class="travel-block-title">Paris</span>
-    <span class="travel-block-meta">Photo collection placeholder</span>
+    <span class="travel-block-meta">May 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/vienna/" style="background-image: url('/travel_img/vienna.jpg');">
+    <span class="travel-block-title">Vienna</span>
+    <span class="travel-block-meta">Jun 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/budapest/" style="background-image: url('/travel_img/budapest.jpg');">
+    <span class="travel-block-title">Budapest</span>
+    <span class="travel-block-meta">Jun 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/heidelberg/" style="background-image: url('/travel_img/heidelberg.jpg');">
+    <span class="travel-block-title">Heidelberg</span>
+    <span class="travel-block-meta">Jun 2024</span>
+  </a>
+  <a class="travel-block" href="/travel/barcelona/" style="background-image: url('/travel_img/barcelona.jpg');">
+    <span class="travel-block-title">Barcelona</span>
+    <span class="travel-block-meta">Aug 2024</span>
   </a>
 </div>
-
