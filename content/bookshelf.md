@@ -4,7 +4,8 @@ draft: false
 ---
 
 > The past is never dead. It’s not even past. All of us labor in webs spun long before we were born, webs of heredity and environment, of desire and consequence, of history and eternity.
-> -- William Faulkner, *Requiem for a Nun*
+>
+> <div align="right">— William Faulkner, <em>Requiem for a Nun</em></div>
 
 ---
 
